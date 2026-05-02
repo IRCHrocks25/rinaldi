@@ -1,0 +1,3760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rinaldi Group — The Insider Power Couple of Palm Beach County</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --soft-black: #1A1F22;
+    --soft-black-90: rgba(26, 31, 34, 0.92);
+    --soft-black-70: rgba(26, 31, 34, 0.72);
+    --soft-black-40: rgba(26, 31, 34, 0.40);
+    /* Vintage Beach palette — warm cream family with subtle variants */
+    --sand: #E8E1CD;          /* slightly darker cream — for section separation */
+    --bone: #EDE6D0;          /* mid cream — between paper and sand */
+    --paper: #F2ECDD;          /* primary background — warm light cream (dominant) */
+    --sage: #8E8A5C;           /* accent (replaces gold) — deeper olive for contrast */
+    --sage-bright: #A29F70;    /* mid olive from palette */
+    --sky: #A8BFCC;            /* secondary mid-tone — sky blue */
+    --sky-deep: #7FA0B0;       /* deeper sky blue for text-on-light */
+    --warm-charcoal: #3A3530;  /* body text on cream */
+    --soft-charcoal: #534D47;  /* secondary body text */
+    --light: #F2ECDD;          /* light text for elements over dark imagery (hero, etc.) */
+    --light-warm: #E8E1D0;
+    /* Legacy color aliases for minimal disruption — remap to new palette */
+    --ocean-blue: var(--sky-deep);
+    --ocean-blue-soft: var(--sky);
+    --sage-olive: var(--sage);
+    --soft-gold: var(--sage);
+    --soft-gold-bright: var(--sage-bright);
+    --linen: var(--warm-charcoal);
+    --linen-warm: var(--soft-charcoal);
+    --cream: var(--soft-black);
+    --hairline: rgba(26, 31, 34, 0.12);
+    --hairline-strong: rgba(26, 31, 34, 0.22);
+    --serif: 'Libre Caslon Text', 'Times New Roman', serif;
+    --sans: 'Manrope', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--warm-charcoal);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ============ TYPOGRAPHY ============ */
+  .serif { font-family: var(--serif); font-weight: 400; }
+  .display {
+    font-family: var(--serif);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  /* Prevent orphans — applied broadly to all headlines */
+  h1, h2, h3, h4, blockquote {
+    text-wrap: balance;
+  }
+
+  /* Pretty wrap for body prose to prevent single-word last lines */
+  p {
+    text-wrap: pretty;
+  }
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--soft-gold);
+  }
+  .label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--linen);
+    opacity: 0.65;
+  }
+
+  /* ============ NAV ============ */
+  #nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.75rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
+    background: transparent;
+    border-bottom: 0.5px solid transparent;
+  }
+  #nav.scrolled {
+    background: rgba(242, 236, 221, 0.85);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border-bottom-color: var(--hairline);
+    padding: 1.25rem 3rem;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  #nav.scrolled .logo {
+    color: var(--soft-black);
+  }
+  .logo-mark {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    vertical-align: middle;
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777647365/RinaldiLogo_bwhbq3.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Light-tinted on dark hero — switches to natural on cream backgrounds */
+    filter: brightness(0) invert(1) opacity(0.92);
+    transition: filter 0.4s ease;
+  }
+  #nav.scrolled .logo-mark,
+  .footer-brand .logo-mark {
+    filter: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 1;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+    transition: opacity 0.3s, color 0.3s, text-shadow 0.3s;
+    position: relative;
+  }
+  #nav.scrolled .nav-links a {
+    color: var(--soft-black);
+    text-shadow: none;
+    font-weight: 500;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--sage-bright); }
+  #nav.scrolled .nav-links a:hover { color: var(--sage); }
+  .nav-cta {
+    border: 1px solid rgba(242, 236, 221, 0.32) !important;
+    padding: 10px 22px;
+    border-radius: 0;
+    opacity: 1 !important;
+    font-size: 11px !important;
+  }
+  #nav.scrolled .nav-cta {
+    border-color: var(--soft-black) !important;
+    color: var(--soft-black) !important;
+  }
+  .nav-cta:hover {
+    background: var(--soft-black);
+    color: var(--light) !important;
+    border-color: var(--soft-black) !important;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 860px;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(90deg, rgba(26,31,34,0.75) 0%, rgba(26,31,34,0.55) 35%, rgba(26,31,34,0.25) 60%, rgba(26,31,34,0.15) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777643897/RinaldiHeroSection_slizzc.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .hero-text {
+    padding-top: 5rem;
+    max-width: 720px;
+  }
+  .hero-eyebrow {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 36px; height: 1px;
+    background: var(--soft-gold);
+  }
+  .hero h1 {
+    font-size: clamp(36px, 4vw, 60px);
+    color: var(--light);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #FAF4E2;
+    opacity: 0.95;
+  }
+  /* Hero sits over a dark photo — override colors for legibility on dark imagery */
+  .hero .eyebrow {
+    color: #DCD4B8;
+    opacity: 0.9;
+  }
+  .hero-eyebrow::before {
+    background: #DCD4B8 !important;
+    opacity: 0.7;
+  }
+  .hero .btn-primary {
+    background: #E8E0C4;
+    color: var(--soft-black);
+  }
+  .hero .btn-primary:hover {
+    background: #F2ECD8;
+    transform: translateY(-1px);
+  }
+  .hero .btn-ghost {
+    border-color: rgba(242, 236, 221, 0.45);
+    color: var(--light);
+    background: transparent;
+  }
+  .hero .btn-ghost:hover {
+    border-color: var(--light);
+    color: var(--light);
+    background: rgba(242, 236, 221, 0.08);
+  }
+  .hero-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(20px, 2vw, 28px);
+    color: var(--light);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Hero portrait — back-to-back composition */
+  .hero-portrait {
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-portrait-frame {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+  }
+  .hero-portrait-img {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(180deg, rgba(26,31,34,0) 0%, rgba(26,31,34,0) 60%, rgba(26,31,34,0.45) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777635214/zmagdaphoto-5274.remini-enhanced__2_t2gdjl.jpg');
+    background-size: cover;
+    background-position: center top;
+    filter: grayscale(8%) contrast(1.05);
+  }
+  .hero-portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(201, 168, 118, 0.25);
+    pointer-events: none;
+    z-index: 3;
+  }
+  .hero-portrait-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 1.5rem 1.75rem;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: linear-gradient(180deg, transparent, rgba(26,31,34,0.6));
+  }
+  .hero-portrait-caption .name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--light);
+    letter-spacing: 0.02em;
+  }
+  .hero-portrait-caption .name em {
+    font-style: italic;
+    color: var(--soft-gold);
+    font-weight: 400;
+  }
+  .hero-portrait-caption .role {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--linen);
+    opacity: 0.7;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 16px 36px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--soft-black);
+    color: var(--light);
+    border-color: var(--soft-black);
+  }
+  .btn-primary:hover {
+    background: var(--sage);
+    color: var(--light);
+    border-color: var(--sage);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    border-color: var(--soft-black);
+    color: var(--soft-black);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    background: var(--soft-black);
+    color: var(--light);
+    border-color: var(--soft-black);
+  }
+
+  /* Frosted glass card — inspired by Deson */
+  .glass-card {
+    background: rgba(242, 236, 221, 0.55);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid rgba(26, 31, 34, 0.20);
+    border-radius: 6px;
+    padding: 3rem 2.75rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 30px 60px -20px rgba(0, 0, 0, 0.5);
+  }
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(237,230,216,0.5), transparent);
+  }
+  .glass-card-dots {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 3px);
+    gap: 4px;
+  }
+  .glass-card-dots span {
+    width: 3px; height: 3px;
+    background: var(--soft-gold);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  .glass-card .label {
+    margin-bottom: 1.5rem;
+    color: var(--soft-gold);
+    opacity: 1;
+  }
+  .glass-card h3 {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.003em;
+  }
+  .glass-card-stats {
+    display: grid;
+    gap: 1.5rem;
+    border-top: 0.5px solid var(--hairline);
+    padding-top: 1.75rem;
+  }
+  .glass-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+  .glass-stat-num {
+    font-family: var(--serif);
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--soft-gold);
+    min-width: 110px;
+    line-height: 0.95;
+    letter-spacing: -0.003em;
+  }
+  .glass-stat-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--linen);
+    opacity: 0.85;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+    color: var(--light);
+    opacity: 0.7;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .scroll-indicator::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: rgba(242, 236, 221, 0.7);
+    margin: 12px auto 0;
+    animation: scrollLine 2s ease-in-out infinite;
+    transform-origin: top;
+  }
+  @keyframes scrollLine {
+    0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+
+  /* ============ SECTION FRAMEWORK ============ */
+  section {
+    padding: 8rem 4rem;
+    position: relative;
+  }
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .section-header {
+    margin-bottom: 5rem;
+    max-width: 800px;
+  }
+  .section-header .eyebrow {
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-header .eyebrow::before {
+    content: '';
+    width: 36px; height: 1px;
+    background: var(--soft-gold);
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.6vw, 54px);
+    font-weight: 400;
+    line-height: 1.08;
+    color: var(--cream);
+    letter-spacing: -0.005em;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+  .section-header h2 em {
+    font-style: italic;
+    color: var(--soft-gold);
+    font-weight: 300;
+  }
+  .section-header p.lede {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--soft-black);
+    opacity: 0.72;
+    font-weight: 400;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ============ POSITIONING ANCHOR STRIP ============ */
+  .anchor-strip {
+    position: relative;
+    background: var(--sand);
+    padding: 5rem 4rem;
+    border-bottom: 0.5px solid var(--hairline);
+    margin-top: -1px;
+  }
+  .anchor-strip-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  /* Glass card frame with palm beach background image inside it */
+  .anchor-glass {
+    position: relative;
+    background-image:
+      linear-gradient(180deg, rgba(242, 236, 221, 0.85) 0%, rgba(242, 236, 221, 0.90) 50%, rgba(242, 236, 221, 0.94) 100%),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=80');
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-radius: 0;
+    padding: 5rem 4rem 5.5rem;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: none;
+  }
+  .anchor-glass::before { display: none; }
+  .anchor-glass-dots { display: none; }
+  /* Headline ABOVE the stats — sets the editorial tone first */
+  .anchor-text {
+    max-width: 880px;
+    margin: 0 auto 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 0.5px solid rgba(26, 31, 34, 0.15);
+  }
+  .anchor-text .label {
+    margin-bottom: 1.5rem;
+    color: var(--sage);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+  }
+  .anchor-text .label::before,
+  .anchor-text .label::after {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--sage);
+    opacity: 0.5;
+  }
+  .anchor-text h3 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 2.6vw, 38px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--soft-black);
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .anchor-text h3 em {
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  /* Stats row — quietly anchored beneath the headline */
+  .anchor-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+  }
+  .anchor-stat {
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+  .anchor-stat + .anchor-stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: rgba(26, 31, 34, 0.12);
+  }
+  .anchor-stat-num {
+    font-family: var(--serif);
+    font-size: clamp(44px, 4.8vw, 64px);
+    font-weight: 400;
+    color: var(--sage);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    font-style: italic;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .anchor-stat-num.text-stat {
+    font-size: clamp(26px, 2.6vw, 36px);
+    line-height: 1.1;
+    padding-top: clamp(18px, 2.2vw, 28px);
+    letter-spacing: -0.003em;
+  }
+  .anchor-stat-text {
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--soft-black);
+    opacity: 0.7;
+    letter-spacing: 0.04em;
+  }
+
+  /* ============ REFERRAL LINE ============ */
+  .referral-line {
+    background: var(--paper);
+    padding: 5rem 4rem;
+    text-align: center;
+  }
+  .referral-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .referral-line p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 32px);
+    line-height: 1.35;
+    color: var(--linen);
+    opacity: 0.78;
+    font-weight: 300;
+    letter-spacing: -0.005em;
+  }
+
+  /* ============ PARTNERSHIP SECTION ============ */
+  .partnership {
+    background: var(--paper);
+    position: relative;
+  }
+  .partnership .section-header {
+    margin-bottom: 1.5rem;
+  }
+  .intro-prose {
+    max-width: 760px;
+    margin-top: 0;
+    margin-bottom: 5rem;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--linen);
+    opacity: 0.85;
+  }
+  .partner-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    margin-top: 4rem;
+  }
+  /* Editorial row: image on one side, content on the other, with subtitle block overlapping the image */
+  .partner-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+    position: relative;
+  }
+  .partner-portrait {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0;
+    filter: grayscale(8%) contrast(1.04);
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .partner-row.reverse .partner-portrait {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .partner-portrait.michelle {
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777636979/Lady_in_3_4_orientation_202605011957_gn2vek.jpg');
+  }
+  .partner-portrait.paul {
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777636979/Guy_bet_in_3_4_202605011958_fstxbu.jpg');
+  }
+  /* Right-side content column */
+  .partner-content {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 0 0 5rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .partner-row.reverse .partner-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 5rem 0 0;
+    text-align: left;
+  }
+  /* NAME BLOCK — Michelle's row gets the cream rectangle overlapping the image */
+  /* Cream rectangle that overlaps the image with the role + name inside */
+  /* NAME BLOCK — both rows: plain (no rectangle), sits at top of content column */
+  .partner-name-block {
+    background: transparent;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 3;
+  }
+  .partner-row.reverse .partner-name-block {
+    background: transparent;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  .partner-role {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.85rem;
+    display: block;
+  }
+  .partner-name-block h3 {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.4vw, 50px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--soft-black);
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  /* SUBTITLE — both rows: cream rectangle that overlaps the image */
+  .partner-subtitle {
+    background: #F2EBDE;
+    padding: 2.5rem 3rem;
+    margin-left: -50%;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+    box-shadow: none;
+    position: relative;
+    z-index: 3;
+  }
+  .partner-subtitle p {
+    padding: 0;
+    margin: 0;
+  }
+  .partner-row.reverse .partner-subtitle {
+    background: #F2EBDE;
+    padding: 2.5rem 0;
+    margin-left: 0;
+    margin-right: -75%;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+  .partner-row.reverse .partner-subtitle p {
+    padding: 0 3rem 0 0;
+  }
+  .partner-subtitle p {
+    font-family: var(--serif);
+    font-size: clamp(20px, 1.8vw, 26px);
+    line-height: 1.45;
+    color: var(--soft-black);
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  /* Body block — second paragraph and credentials, in the right column below the subtitle */
+  .partner-body {
+    padding-top: 0;
+    max-width: 540px;
+  }
+  .partner-row.reverse .partner-body {
+    margin-left: auto;
+    text-align: left;
+  }
+  .partner-body p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--soft-black);
+    opacity: 0.82;
+    margin-bottom: 1.5rem;
+  }
+  /* Credentials list */
+  .credentials-title {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid rgba(26, 31, 34, 0.18);
+  }
+  .credentials {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+    padding: 0;
+  }
+  .credentials li {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--soft-black);
+    opacity: 0.78;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .credentials li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 6px; height: 1px;
+    background: var(--sage);
+  }
+
+  /* ============ PULL QUOTE ============ */
+  .pull-quote {
+    background: var(--soft-black);
+    background-image:
+      linear-gradient(180deg, rgba(26, 31, 34, 0.55) 0%, rgba(26, 31, 34, 0.45) 50%, rgba(26, 31, 34, 0.65) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777670112/ddscc_tl0wvo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--light);
+    padding: 7rem 4rem;
+    text-align: center;
+    position: relative;
+  }
+  .pull-quote-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .pull-quote blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(32px, 3.8vw, 52px);
+    line-height: 1.15;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    letter-spacing: -0.003em;
+    text-wrap: balance;
+  }
+  .pull-quote blockquote em {
+    font-style: italic;
+    color: #FFFFFF;
+  }
+  .pull-quote-mark {
+    font-family: var(--serif);
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 0.5;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .pull-quote cite {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.7;
+  }
+
+  /* ============ WHAT WE CHALLENGE ============ */
+  .challenge { background: var(--paper); }
+  .challenge .section-header {
+    margin-bottom: 1.5rem;
+  }
+  .challenge-intro {
+    max-width: 760px;
+    margin-bottom: 4rem;
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--soft-black);
+    opacity: 0.78;
+  }
+  /* Two-column layout: image on left, accordion of myths on right */
+  .challenge-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .challenge-img {
+    position: relative;
+    aspect-ratio: 4/5;
+    background-image:
+      linear-gradient(180deg, rgba(26,31,34,0.20) 0%, rgba(26,31,34,0.78) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777665503/kjkl_he7rog.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(26, 31, 34, 0.18);
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+  }
+  .challenge-img-caption {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+    max-width: 100%;
+  }
+  .challenge-img-caption-mark {
+    font-family: var(--serif);
+    font-size: 64px;
+    line-height: 0.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .challenge-img-caption p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.35;
+    color: #FFFFFF;
+    opacity: 1;
+    margin: 0;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+    font-weight: 400;
+  }
+  .challenge-img-caption p em {
+    font-style: italic;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  /* Accordion list */
+  .myth-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 0.5px solid rgba(26, 31, 34, 0.18);
+  }
+  .myth {
+    border-bottom: 0.5px solid rgba(26, 31, 34, 0.18);
+    position: relative;
+  }
+  .myth-header {
+    display: grid;
+    grid-template-columns: 56px 1fr 24px;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .myth-header:hover .myth-headline {
+    color: var(--sage);
+  }
+  .myth-num {
+    font-family: var(--serif);
+    font-size: clamp(40px, 4vw, 56px);
+    font-weight: 400;
+    color: rgba(26, 31, 34, 0.30);
+    line-height: 0.85;
+    letter-spacing: -0.003em;
+    font-style: italic;
+    transition: color 0.3s ease;
+  }
+  .myth.open .myth-num {
+    color: var(--sage);
+  }
+  .myth-headline {
+    font-family: var(--serif);
+    font-size: clamp(20px, 1.9vw, 26px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--soft-black);
+    letter-spacing: -0.005em;
+    transition: color 0.3s ease;
+  }
+  .myth-tag {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--sage);
+    margin-right: 12px;
+    vertical-align: 4px;
+    font-weight: 500;
+  }
+  /* Plus/minus toggle indicator */
+  .myth-toggle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .myth-toggle::before,
+  .myth-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--sage);
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .myth-toggle::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+  .myth-toggle::after {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+  }
+  .myth.open .myth-toggle::after {
+    transform: translateX(-50%) rotate(90deg);
+  }
+  /* Body content — collapsed by default */
+  .myth-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.4s ease;
+    opacity: 0;
+  }
+  .myth.open .myth-body {
+    max-height: 400px;
+    opacity: 1;
+  }
+  .myth-body-inner {
+    padding: 0 0 1.75rem 4.25rem;
+  }
+  .myth-body p {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--soft-black);
+    opacity: 0.78;
+    max-width: 540px;
+    margin: 0;
+  }
+  .challenge-conclusion {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--linen);
+    opacity: 0.85;
+    max-width: 800px;
+    line-height: 1.4;
+  }
+
+  /* ============ UNFAIR ADVANTAGE ============ */
+  .advantage {
+    background: var(--paper);
+    color: var(--soft-black);
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+  }
+  /* Full-width image stage hosts the entire section */
+  .advantage-stage {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    background: var(--soft-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  /* Background video fills the stage — scaled up to eliminate any black sides */
+  .advantage-stage-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1.45);
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* Stronger dark overlay — text needs to be highly legible */
+  .advantage-stage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,31,34,0.78) 0%, rgba(26,31,34,0.70) 30%, rgba(26,31,34,0.78) 65%, rgba(26,31,34,0.92) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* Header and grid sit above the video + overlay */
+  .advantage-stage-header,
+  .advantage-grid {
+    position: relative;
+    z-index: 2;
+  }
+  /* Header inside the image — sits closer to the cards */
+  .advantage-stage-header {
+    padding: 6rem 4rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  /* Smooth sequential reveal — eyebrow → headline → intro, generous timing */
+  .advantage-stage-header > * {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 1.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .advantage-stage-header.in-view > .eyebrow {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0ms;
+  }
+  .advantage-stage-header.in-view > h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 250ms;
+  }
+  .advantage-stage-header.in-view > p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 600ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .advantage-stage-header > * {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+  .advantage-stage-header .eyebrow {
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .advantage-stage-header .eyebrow::before,
+  .advantage-stage-header .eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .advantage-stage-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.6vw, 56px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .advantage-stage-header h2 em {
+    font-style: italic;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .advantage-stage-header p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #FFFFFF;
+    opacity: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  /* 6-column card grid — fixed at bottom of stage */
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.22);
+    margin-top: auto;
+  }
+  .advantage-item {
+    position: relative;
+    padding: 2.5rem 1.75rem 2.5rem;
+    color: var(--light);
+    cursor: default;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: opacity 0.5s ease, background 0.5s ease;
+  }
+  .advantage-item + .advantage-item {
+    border-left: 0.5px solid rgba(255, 255, 255, 0.22);
+  }
+  /* Hover dim — others fade back, hovered card pops with darker backdrop */
+  .advantage-grid:hover .advantage-item {
+    opacity: 0.55;
+  }
+  .advantage-grid:hover .advantage-item:hover {
+    opacity: 1;
+    background: rgba(26, 31, 34, 0.55);
+  }
+  /* Big number sits right above the title — no empty middle */
+  .advantage-num {
+    font-family: var(--serif);
+    font-size: clamp(56px, 5.5vw, 92px);
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    display: block;
+    line-height: 0.9;
+    margin-bottom: 1.25rem;
+    transition: color 0.4s ease;
+  }
+  .advantage-item:hover .advantage-num {
+    color: #FFFFFF;
+  }
+  .advantage-num small {
+    display: none;
+  }
+  /* Content block — title visible at rest, body reveals on hover */
+  .advantage-content {
+    /* No margin-top:auto needed — parent justify-content:flex-end handles bottom anchoring */
+  }
+  .advantage-item h3 {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #FFFFFF;
+    margin-bottom: 0;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  /* Body — hidden at rest, fades up beneath the title on hover */
+  .advantage-item p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #FFFFFF;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transform: translateY(8px);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+      max-height 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+      margin-top 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    pointer-events: none;
+  }
+  .advantage-item:hover p {
+    opacity: 1;
+    max-height: 500px;
+    margin-top: 1rem;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 0.1s;
+  }
+  .advantage-item p em {
+    color: #FFFFFF;
+    font-style: italic;
+  }
+  /* Sequential card entrance — number + title cascade in when section enters viewport */
+  .advantage-num,
+  .advantage-content {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+      color 0.4s ease;
+  }
+  .advantage-item.revealed .advantage-num {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0ms;
+  }
+  .advantage-item.revealed .advantage-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 200ms;
+  }
+  /* Override to ensure num color transition still works after reveal */
+  .advantage-item.revealed:hover .advantage-num {
+    color: rgba(242, 236, 221, 0.85);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .advantage-num,
+    .advantage-content,
+    .advantage-item p {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      max-height: none;
+    }
+  }
+
+  /* ============ MARKET INSIGHT ============ */
+  .market { background: var(--paper); }
+
+  /* Sticky-scroll cross-fade — text pinned on left, images cross-fade on right */
+  /* MARKET INSIGHT — 2-column layout: text left, image right */
+  .market-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+  /* Left column: text */
+  .market-card-overlay {
+    background: transparent;
+    padding: 0;
+    color: var(--soft-black);
+    max-width: 100%;
+  }
+  .market-card-overlay .eyebrow {
+    margin-bottom: 1.5rem;
+    color: var(--sage);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .market-card-overlay .eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--sage);
+    display: inline-block;
+  }
+  .market-card-overlay h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.2vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--soft-black);
+    margin: 0 0 1.75rem 0;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .market-card-overlay h2 em {
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .market-card-overlay p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--soft-black);
+    opacity: 0.78;
+    margin-bottom: 1.25rem;
+    max-width: 520px;
+  }
+  .market-card-overlay p:last-child {
+    margin-bottom: 0;
+  }
+  .market-card-overlay p.italic {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--soft-black);
+    opacity: 0.85;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid rgba(26, 31, 34, 0.18);
+    max-width: 520px;
+  }
+  /* Right column: image */
+  .market-card-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777639872/2_vepsds.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: contrast(1.05);
+    min-height: 540px;
+  }
+  .market-overlay-counter strong {
+    font-weight: 400;
+    color: var(--sage-bright);
+  }
+  .market-overlay-progress {
+    width: 200px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.30);
+    position: relative;
+  }
+  .market-overlay-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--sage-bright);
+    transition: width 0.3s ease;
+  }
+
+  .market-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.4vw, 50px);
+    font-weight: 400;
+    line-height: 1.08;
+    color: var(--cream);
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .market-text h2 em {
+    font-style: italic;
+    color: var(--soft-gold);
+    font-weight: 300;
+  }
+  .market-text p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--linen);
+    opacity: 0.82;
+    margin-bottom: 1.5rem;
+  }
+  .market-text p.italic {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--linen);
+    opacity: 0.75;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--hairline);
+  }
+  /* Section header — centered above the carousel */
+  .developments-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+  }
+  .developments-header h3 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 3vw, 44px);
+    font-weight: 400;
+    color: var(--soft-black);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    opacity: 1;
+  }
+  .developments-header p {
+    display: block;
+    font-size: 14px;
+    color: var(--soft-black);
+    opacity: 0.65;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  /* Carousel container */
+  .developments-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    aspect-ratio: 16/6;
+    min-height: 380px;
+    overflow: hidden;
+    z-index: 2;
+  }
+  /* Stack of cards — only the active one is visible */
+  .developments {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+  }
+  .development {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: default;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0.7s;
+  }
+  .development.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0s;
+  }
+  .development:hover { transform: none; }
+  /* Image fills the entire card */
+  .dev-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    margin-bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.4s ease;
+  }
+  .dev-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 31, 34, 0.10) 0%, rgba(26, 31, 34, 0.20) 100%);
+    pointer-events: none;
+  }
+  /* OVERLAY CARD — flush to top-left corner of image, warm cream background */
+  .dev-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: #F2EBDE;
+    padding: 2rem 2.5rem;
+    max-width: 440px;
+  }
+  /* Big serif headline inside the white card */
+  .dev-name {
+    position: static;
+    transform: none;
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.4vw, 52px);
+    font-weight: 400;
+    color: var(--soft-black);
+    line-height: 1.05;
+    letter-spacing: -0.005em;
+    margin: 0 0 1.25rem 0;
+    max-width: none;
+    text-wrap: balance;
+    text-align: left;
+  }
+  /* Small meta line beneath title */
+  .dev-meta-row {
+    position: static;
+    bottom: auto;
+    left: auto;
+    z-index: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    padding-top: 0;
+    flex-wrap: wrap;
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--soft-black);
+    opacity: 0.65;
+    letter-spacing: 0.02em;
+  }
+  .dev-meta-row::before {
+    content: 'Development /';
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--soft-black);
+    opacity: 1;
+    letter-spacing: 0.02em;
+    margin-right: 6px;
+    font-weight: 400;
+  }
+  .dev-detail {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--soft-black);
+    opacity: 1;
+  }
+  .dev-detail::after {
+    content: ' / ';
+    margin: 0 4px;
+    opacity: 0.6;
+  }
+  .dev-price {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--sage);
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    letter-spacing: 0.02em;
+  }
+  /* Pagination — horizontal lines instead of dots, sage for active */
+  .dev-card-overlay .dev-dots {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 0.5px solid rgba(26, 31, 34, 0.15);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .dev-dot {
+    width: 26px;
+    height: 2px;
+    border-radius: 0;
+    background: rgba(26, 31, 34, 0.20);
+    cursor: pointer;
+    transition: background 0.4s ease, width 0.4s ease;
+    border: 0;
+    padding: 0;
+  }
+  .dev-card-overlay .dev-dot.active {
+    background: var(--sage);
+    width: 40px;
+  }
+  .dev-card-overlay .dev-dot:hover {
+    background: rgba(26, 31, 34, 0.50);
+  }
+  .dev-card-overlay .dev-dot.active:hover {
+    background: var(--sage);
+  }
+  /* Badge no longer used in carousel — hidden */
+  .dev-badge {
+    display: none;
+  }
+  /* Navigation arrows removed — auto-advance handles progression */
+  .dev-nav {
+    display: none;
+  }
+
+  /* ============ FOUR PILLARS ============ */
+  .pillars {
+    background: var(--paper);
+    padding-top: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillars::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(180deg, var(--paper) 0%, rgba(242, 236, 221, 0.85) 40%, rgba(242, 236, 221, 0.85) 60%, var(--paper) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777639871/77_w0o5jk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .pillars > .container { position: relative; z-index: 1; }
+  /* Pillars section header — centered */
+  .pillars .section-header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pillars .section-header .eyebrow {
+    justify-content: center;
+  }
+  .pillars .section-header h2 {
+    text-align: center;
+  }
+  .pillars .section-header p.lede {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  /* Tab layout: vertical tabs on the left, content panel on the right */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 5rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+  /* Tab list — vertical column of clickable rows */
+  .pillar-tabs {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(26, 31, 34, 0.18);
+  }
+  .pillar-tab {
+    background: transparent;
+    border: none;
+    padding: 1.5rem 0 1.5rem 2rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: background 0.3s ease;
+  }
+  .pillar-tab + .pillar-tab {
+    border-top: 0.5px solid rgba(26, 31, 34, 0.12);
+  }
+  /* Active accent line — sage on the left edge of the active tab */
+  .pillar-tab::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--sage);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .pillar-tab.active::before {
+    transform: scaleY(1);
+  }
+  .pillar-tab:hover .pillar-tab-title {
+    color: var(--sage);
+  }
+  .pillar-tab-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(28px, 2.6vw, 40px);
+    color: rgba(26, 31, 34, 0.30);
+    line-height: 0.9;
+    flex-shrink: 0;
+    width: 48px;
+    transition: color 0.3s ease;
+    letter-spacing: -0.005em;
+  }
+  .pillar-tab.active .pillar-tab-num {
+    color: var(--sage);
+  }
+  .pillar-tab-title {
+    font-family: var(--serif);
+    font-size: clamp(20px, 1.8vw, 24px);
+    font-weight: 400;
+    color: rgba(26, 31, 34, 0.55);
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    transition: color 0.3s ease;
+    flex: 1;
+  }
+  .pillar-tab.active .pillar-tab-title {
+    color: var(--soft-black);
+  }
+  /* Content panel — displays the active pillar's body */
+  .pillar-panels {
+    position: relative;
+    min-height: 460px;
+  }
+  .pillar-panel {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    text-align: left;
+    transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0.5s;
+  }
+  .pillar-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0s;
+  }
+  /* Big numeral as background atmosphere inside the panel */
+  .pillar-panel-bignum {
+    display: none;
+  }
+  .pillar-panel h3 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 2.8vw, 40px);
+    font-weight: 400;
+    color: var(--soft-black);
+    line-height: 1.1;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .pillar-panel-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--sage);
+    margin: 0 0 1.5rem 0;
+    display: block;
+    line-height: 1.4;
+  }
+  .pillar-panel p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--soft-black);
+    opacity: 0.78;
+    margin: 0 0 2rem 0;
+    max-width: 580px;
+  }
+  .pillar-panel ul {
+    list-style: none;
+    border-top: 0.5px solid rgba(26, 31, 34, 0.18);
+    padding: 1.5rem 0 0 0;
+    margin: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+  .pillar-panel ul li {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--soft-black);
+    opacity: 0.78;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .pillar-panel ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 6px; height: 1px;
+    background: var(--sage);
+  }
+  .pillar-panel ul li em {
+    color: var(--sage);
+    font-style: italic;
+  }
+
+  /* ============ AUTHORITY ============ */
+  .authority {
+    background: var(--soft-black);
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Soft repeating logo-emblem pattern using the actual Rinaldi logo */
+  /* Larger tile relative to icon size leverages the SVG's natural viewBox padding for spacing */
+  .authority::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777647365/RinaldiLogo_bwhbq3.svg');
+    background-repeat: repeat;
+    background-size: 110px 110px;
+    /* Tint to warm beige + soft blur */
+    filter: brightness(0) saturate(100%) invert(91%) sepia(11%) saturate(615%) hue-rotate(351deg) brightness(95%) contrast(91%) blur(0.4px);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .authority > .container {
+    position: relative;
+    z-index: 1;
+  }
+  /* Hide the section-header — replaced by inline heading inside layout */
+  .authority > .container > .section-header {
+    display: none;
+  }
+  /* Two-column layout: heading on left, accordion on right */
+  .authority-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 0;
+  }
+  /* Hide the now-unused image */
+  .authority-img {
+    display: none;
+  }
+  /* Heading column — sticky so it stays visible while user scrolls through accordion */
+  .authority-heading {
+    position: sticky;
+    top: 6rem;
+    color: var(--light);
+  }
+  .authority-heading .eyebrow {
+    color: var(--sage-bright);
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .authority-heading .eyebrow::before {
+    content: '';
+    width: 36px; height: 1px;
+    background: var(--sage-bright);
+  }
+  .authority-heading h2 {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.6vw, 54px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--light);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .authority-heading h2 em {
+    font-style: italic;
+    color: #FAF4E2;
+    font-weight: 400;
+  }
+  .authority-heading p.lede {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #FFFFFF;
+    opacity: 1;
+    font-weight: 400;
+    max-width: 460px;
+    margin: 0;
+  }
+  /* Accordion list — dark theme version */
+  .authority-accordion {
+    display: flex;
+    flex-direction: column;
+    border-top: 0.5px solid rgba(242, 236, 221, 0.18);
+  }
+  .authority-card {
+    border-bottom: 0.5px solid rgba(242, 236, 221, 0.18);
+    position: relative;
+  }
+  .authority-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    cursor: pointer;
+    user-select: none;
+    transition: padding 0.4s ease;
+  }
+  .authority-card-header:hover .authority-card-title {
+    color: var(--sage-bright);
+  }
+  .authority-card-num {
+    font-family: var(--serif);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--sage-bright);
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .authority-card-title {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2vw, 28px);
+    font-weight: 400;
+    color: var(--light);
+    line-height: 1.25;
+    flex: 1;
+    transition: color 0.3s ease;
+    letter-spacing: -0.005em;
+  }
+  /* Plus/minus toggle indicator */
+  .authority-card-toggle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .authority-card-toggle::before,
+  .authority-card-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--sage-bright);
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .authority-card-toggle::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+  .authority-card-toggle::after {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+  }
+  .authority-card.open .authority-card-toggle::after {
+    transform: translateX(-50%) rotate(90deg);
+  }
+  /* Body content — collapsed by default */
+  .authority-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.4s ease;
+    opacity: 0;
+  }
+  .authority-card.open .authority-card-body {
+    max-height: 400px;
+    opacity: 1;
+  }
+  .authority-card-body-inner {
+    padding: 0 0 2rem 2.5rem;
+  }
+  .authority-card-body p {
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--light);
+    opacity: 0.85;
+    max-width: 540px;
+  }
+  .authority-card-body p em {
+    color: var(--sage-bright);
+    font-style: italic;
+  }
+
+  /* ============ FOUNDER PHILOSOPHY ============ */
+  .philosophy {
+    background: var(--paper);
+    color: var(--soft-black);
+    padding: 10rem 4rem;
+  }
+  .philosophy-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 0;
+    align-items: stretch;
+    position: relative;
+  }
+  .philosophy-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777666049/magdaphoto-5362_ge2uos.jpg');
+    filter: contrast(1.03);
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+    align-self: stretch;
+    min-height: 600px;
+  }
+  /* Right-side content column */
+  .philosophy-text {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 1rem 0 5rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+  }
+  /* Cream rectangle with eyebrow + headline that overlaps the image */
+  .philosophy-name-block {
+    background: #F2EBDE;
+    padding: 2.25rem 3rem;
+    margin-left: -50%;
+    margin-right: 0;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 3;
+  }
+  .philosophy-name-block .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.85rem;
+    display: block;
+  }
+  .philosophy-name-block h2 {
+    font-family: var(--serif);
+    font-size: clamp(34px, 3.4vw, 50px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--soft-black);
+    margin: 0;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .philosophy-name-block h2 em {
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .philosophy p.lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(20px, 1.8vw, 26px);
+    line-height: 1.45;
+    color: var(--soft-black);
+    opacity: 1;
+    margin: 0 0 2rem 0;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+    max-width: 540px;
+  }
+  .philosophy p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--soft-black);
+    opacity: 0.82;
+    margin-bottom: 1.5rem;
+    max-width: 540px;
+  }
+  .philosophy .closing {
+    font-family: var(--serif);
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--soft-black);
+    opacity: 0.85;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid rgba(26,31,34,0.18);
+    max-width: 540px;
+  }
+  .philosophy .closing strong {
+    font-weight: 500;
+    font-style: normal;
+    color: var(--sage);
+  }
+
+  /* ============ WHO WE WORK WITH ============ */
+  .who {
+    background: var(--soft-black);
+    text-align: center;
+    padding: 9rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .who::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(180deg, rgba(26, 31, 34, 0.55) 0%, rgba(26, 31, 34, 0.40) 50%, rgba(26, 31, 34, 0.65) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777662739/hhh_oy0cwd.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .who-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .who .eyebrow {
+    justify-content: center;
+    display: inline-flex;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+  }
+  .who .eyebrow::before { background: #FFFFFF; }
+  .who h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.2vw, 48px);
+    font-weight: 400;
+    line-height: 1.12;
+    color: #FFFFFF;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .who h2 em {
+    font-style: italic;
+    color: #FFFFFF;
+    font-weight: 400;
+  }
+  .who p.lede {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .who p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-bottom: 3rem;
+  }
+  /* Scoped CTA — white button with dark text, pops against the dark photo */
+  .who .btn-primary {
+    background: #FFFFFF;
+    color: var(--soft-black);
+    border-color: #FFFFFF;
+  }
+  .who .btn-primary:hover {
+    background: #F2ECDD;
+    color: var(--soft-black);
+    border-color: #F2ECDD;
+  }
+
+  /* ============ CONTACT ============ */
+  .contact {
+    background: #FFFFFF;
+    border-top: 0.5px solid var(--hairline);
+    padding: 7rem 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    align-items: start;
+  }
+  /* Left column — headline, lede, body, meta */
+  .contact-left .eyebrow {
+    color: var(--sage);
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-left .eyebrow::before {
+    background: var(--sage);
+  }
+  .contact-left h2 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 3.6vw, 56px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--soft-black);
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .contact-left h2 em {
+    font-style: italic;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .contact-left p.lede {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 18px;
+    color: var(--soft-black);
+    opacity: 0.78;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 520px;
+  }
+  .contact-left p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--soft-black);
+    opacity: 0.72;
+    margin: 0 0 2.5rem 0;
+    max-width: 520px;
+  }
+  .contact-meta {
+    border-top: 0.5px solid rgba(26, 31, 34, 0.18);
+    padding-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .contact-meta-item .label {
+    margin-bottom: 0.4rem;
+    color: var(--sage);
+    opacity: 1;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .contact-meta-item p {
+    font-size: 15px;
+    color: var(--soft-black);
+    opacity: 0.78;
+    margin: 0;
+  }
+  /* MINIMALIST FORM — lines only, no box, no card */
+  .contact-form {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+    box-shadow: none;
+  }
+  .contact-form::before { display: none; }
+  .contact-form-dots { display: none; }
+  .form-group { margin-bottom: 2.5rem; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--soft-black);
+    opacity: 0.55;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(26, 31, 34, 0.20);
+    color: var(--soft-black);
+    font-family: var(--sans);
+    font-size: 16px;
+    padding: 0.75rem 0;
+    transition: border-color 0.3s ease;
+    outline: none;
+    border-radius: 0;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-bottom-color: var(--sage);
+  }
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%238E8A5C' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    background-size: 10px 7px;
+    padding-right: 2rem;
+  }
+  .form-group select option { background: #FFFFFF; color: var(--soft-black); }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: var(--sans);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--soft-black);
+    opacity: 0.32;
+  }
+  .form-submit {
+    width: auto;
+    margin-top: 1rem;
+    padding: 16px 36px;
+    background: var(--soft-black);
+    color: var(--light);
+    border: none;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .form-submit:hover {
+    background: var(--sage);
+    color: var(--light);
+  }
+  /* Wide image/video strip beneath the contact section — full-width */
+  .contact-image-strip {
+    width: 100%;
+    aspect-ratio: 16/7;
+    min-height: 380px;
+    max-height: 620px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-image-strip video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+  }
+  /* Dark overlay over the video for mood and to make the logo legible */
+  .contact-image-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 31, 34, 0.55);
+    z-index: 2;
+    pointer-events: none;
+  }
+  /* Logo emblem centered over the video */
+  .contact-image-strip-logo {
+    position: relative;
+    z-index: 3;
+    width: clamp(80px, 9vw, 130px);
+    height: clamp(80px, 9vw, 130px);
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777647365/RinaldiLogo_bwhbq3.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Tint the SVG to a warm beige */
+    filter: brightness(0) saturate(100%) invert(91%) sepia(11%) saturate(615%) hue-rotate(351deg) brightness(95%) contrast(91%) opacity(0.85);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--sand);
+    border-top: 0.5px solid var(--hairline);
+    padding: 4rem 4rem 2.5rem;
+  }
+  .footer-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 0.5px solid var(--hairline);
+    margin-bottom: 2.5rem;
+  }
+  .footer-brand .logo {
+    font-size: 28px;
+    color: var(--soft-black);
+  }
+  .footer-brand p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--linen);
+    opacity: 0.7;
+    margin-top: 1rem;
+    line-height: 1.4;
+    max-width: 360px;
+  }
+  .footer-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+    align-content: start;
+  }
+  .footer-nav a {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--linen);
+    opacity: 0.7;
+    text-decoration: none;
+    transition: color 0.3s, opacity 0.3s;
+  }
+  .footer-nav a:hover { color: var(--soft-gold); opacity: 1; }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--linen);
+    opacity: 0.5;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.25s; }
+  .stagger-3 { transition-delay: 0.4s; }
+
+  /* Scroll-paced word reveal — opacity driven directly by scroll position */
+  .reveal-words .word {
+    display: inline-block;
+    opacity: 0.18;
+    transform: translateY(8px);
+    will-change: opacity, transform;
+  }
+  /* Fade-only variant — for body paragraphs where the lift would feel busy */
+  .reveal-words--fade-only .word {
+    transform: none;
+  }
+  /* Respect reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-words .word { opacity: 1; transform: none; }
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1100px) {
+    .partnership::before,
+    .pillars::before,
+    .authority::before,
+    .who::before {
+      background-attachment: scroll;
+    }
+    .hero { height: auto; min-height: 0; padding-bottom: 3rem; }
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 2rem 3rem; }
+    .hero-portrait { padding-top: 0; min-height: 0; }
+    .hero-portrait-frame { max-width: 480px; }
+    .anchor-strip { padding: 4rem 1.5rem; }
+    .anchor-glass { padding: 2.5rem 1.5rem 3rem; }
+    .anchor-stats { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; margin-bottom: 2rem; padding-bottom: 2rem; }
+    .anchor-stat { padding: 0 0.5rem; }
+    .anchor-stat + .anchor-stat::before { display: none; }
+    .anchor-stat-num { font-size: 44px; }
+    .anchor-stat-num.text-stat { font-size: 24px; padding-top: 14px; }
+    .partner-grid { gap: 4rem; }
+    .partner-row, .partner-row.reverse {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .partner-portrait, .partner-row.reverse .partner-portrait {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .partner-content, .partner-row.reverse .partner-content {
+      grid-column: 1;
+      grid-row: 2;
+      padding: 0;
+      text-align: left;
+    }
+    .partner-name-block, .partner-row.reverse .partner-name-block {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      margin-top: -3rem;
+      margin-bottom: 2rem;
+      padding: 1.75rem 1.5rem;
+    }
+    .partner-name-block h3 { font-size: 32px; }
+    .partner-subtitle, .partner-row.reverse .partner-subtitle {
+      margin: 0 1.5rem 1.5rem;
+      padding: 0;
+    }
+    .partner-subtitle p { font-size: 19px; }
+    .partner-body, .partner-row.reverse .partner-body {
+      padding: 0 1.5rem;
+      max-width: 100%;
+      margin: 0;
+    }
+    .philosophy-layout, .contact-layout, .footer-top, .pillars-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .philosophy-img {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .philosophy-text {
+      grid-column: 1;
+      grid-row: 2;
+      padding: 0;
+    }
+    .philosophy-name-block {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      margin-top: -3rem;
+      margin-bottom: 2rem;
+      padding: 1.75rem 1.5rem;
+    }
+    .philosophy-name-block h2 { font-size: 32px; }
+    .philosophy p, .philosophy p.lede, .philosophy .closing {
+      padding: 0 1.5rem;
+      max-width: 100%;
+    }
+    .contact { padding: 4rem 1.5rem; }
+    .contact-left h2 { font-size: 36px; }
+    .contact-image-strip { aspect-ratio: 4/3; min-height: 300px; max-height: 440px; }
+    /* MARKET CARD — mobile fallback: stack text above image */
+    .market-card {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+    .market-card-image {
+      aspect-ratio: 4/5;
+      min-height: 400px;
+    }
+    .market-card-overlay h2 { font-size: 30px; }
+    .pillar:nth-child(odd) { border-right: none; }
+    .pillars-grid { gap: 2rem; grid-template-columns: 1fr; }
+    .pillar-tabs {
+      flex-direction: row;
+      overflow-x: auto;
+      border-left: none;
+      border-bottom: 1px solid rgba(26, 31, 34, 0.18);
+      gap: 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .pillar-tabs::-webkit-scrollbar { display: none; }
+    .pillar-tab {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.25rem 1.5rem;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      min-width: 200px;
+    }
+    .pillar-tab + .pillar-tab {
+      border-top: none;
+      border-left: 0.5px solid rgba(26, 31, 34, 0.12);
+    }
+    .pillar-tab::before {
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      top: auto;
+      width: auto;
+      height: 2px;
+      transform: scaleX(0);
+    }
+    .pillar-tab.active::before {
+      transform: scaleX(1);
+    }
+    .pillar-tab-num { width: auto; font-size: 24px; }
+    .pillar-tab-title { font-size: 16px; }
+    .pillar-panels { min-height: 540px; }
+    .pillar-panel-bignum { font-size: 80px; }
+    .pillar-panel h3 { font-size: 28px; }
+    /* Advantage stage — convert to vertical stack on mobile */
+    .advantage-stage {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      min-height: 0;
+      display: block;
+    }
+    .advantage-grid {
+      grid-template-columns: 1fr;
+    }
+    .advantage-item {
+      padding: 2.5rem 1.5rem;
+    }
+    .advantage-item + .advantage-item {
+      border-left: none;
+      border-top: 0.5px solid rgba(255, 255, 255, 0.18);
+    }
+    .advantage-num { font-size: 56px; }
+    .advantage-item h3 { font-size: 12px; }
+    .advantage-item p { font-size: 14px; }
+    .authority-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .authority-heading { position: static; }
+    .authority-heading h2 { font-size: 32px; }
+    .developments-carousel { min-height: 440px; aspect-ratio: 4/3; }
+    .dev-card-overlay { padding: 1.5rem 1.75rem; max-width: 80%; top: 0; left: 0; }
+    .dev-name { font-size: 28px; }
+    .dev-meta-row { font-size: 11px; flex-wrap: wrap; }
+    .dev-nav-btn { width: 50px; height: 50px; }
+    section, footer { padding: 5rem 2rem; }
+    .pull-quote, .philosophy { padding: 5rem 2rem; }
+    #nav { padding: 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: inline-block; }
+    .challenge-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .challenge-img { aspect-ratio: 4/5; position: static; max-width: 480px; margin: 0 auto; }
+    .myth-header { grid-template-columns: 44px 1fr 20px; gap: 1rem; padding: 1.25rem 0; }
+    .myth-num { font-size: 32px; }
+    .myth-headline { font-size: 18px; }
+    .myth-body-inner { padding: 0 0 1.5rem 3.25rem; }
+    .glass-stat-num { font-size: 44px; min-width: 84px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#" class="logo"><span class="logo-mark"></span>Rinaldi Group</a>
+  <ul class="nav-links">
+    <li><a href="#partnership">The Couple</a></li>
+    <li><a href="#advantage">The Advantage</a></li>
+    <li><a href="#market">Market</a></li>
+    <li><a href="#authority">Authority</a></li>
+    <li><a href="#contact" class="nav-cta">Begin a Conversation</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text fade-in">
+      <div class="hero-eyebrow">
+        <span class="eyebrow">Rinaldi Group</span>
+      </div>
+      <h1 class="display reveal-words">The Insider <em>Power&nbsp;Couple</em> of&nbsp;Palm&nbsp;Beach&nbsp;County</h1>
+      <p class="hero-tagline reveal-words">Two instincts. One outcome. Yours.</p>
+      <p class="reveal-words reveal-words--fade-only" style="font-size: 16px; line-height: 1.7; color: #FFFFFF; opacity: 1; max-width: 540px; margin-bottom: 2.5rem;">
+        She closes. He connects. Together, they deliver for clients whose moves are too important for one person's bandwidth, one person's skills, or one person's network.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Start a Private Advisory Conversation</a>
+        <a href="#partnership" class="btn btn-ghost">Meet the Rinaldis</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll</div>
+</section>
+
+<!-- ============ POSITIONING ANCHOR STRIP ============ -->
+<section class="anchor-strip">
+  <div class="anchor-strip-inner">
+    <div class="anchor-glass fade-in">
+      <!-- Headline first — the editorial lead -->
+      <div class="anchor-text">
+        <p class="label eyebrow">The Positioning Anchor</p>
+        <h3 class="reveal-words">The only power-couple advisory in Palm Beach County combining negotiation intelligence, condo authority, and insider access to&nbsp;the market's most important&nbsp;developments.</h3>
+      </div>
+      <!-- Stats below — the proof points -->
+      <div class="anchor-stats">
+        <div class="anchor-stat">
+          <span class="anchor-stat-num">10+</span>
+          <span class="anchor-stat-text">Years embedded in Palm Beach County</span>
+        </div>
+        <div class="anchor-stat">
+          <span class="anchor-stat-num text-stat">Only</span>
+          <span class="anchor-stat-text">Certified Condo Specialist® in Palm Beach County</span>
+        </div>
+        <div class="anchor-stat">
+          <span class="anchor-stat-num">3×</span>
+          <span class="anchor-stat-text">eXp ICON Agent — Michelle</span>
+        </div>
+        <div class="anchor-stat">
+          <span class="anchor-stat-num">86+</span>
+          <span class="anchor-stat-text">Five-star reviews across platforms</span>
+        </div>
+        <div class="anchor-stat">
+          <span class="anchor-stat-num">10</span>
+          <span class="anchor-stat-text">Sold in 10 days while comparable units sat for 250+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERSHIP ============ -->
+<section class="partnership" id="partnership">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">The Partnership</span>
+      <h2 class="reveal-words">Two complementary instincts. <em>One unified&nbsp;outcome.</em></h2>
+    </div>
+    <p class="intro-prose fade-in reveal-words reveal-words--fade-only">
+      Most real estate agents give you one thing: their individual skill set. A deal-maker or a relationship builder. A technician or a people person. With the Rinaldis, you get both — by design, and by a decade of practice.
+    </p>
+
+    <div class="partner-grid">
+
+      <!-- MICHELLE — image left, content right -->
+      <div class="partner-row fade-in">
+        <div class="partner-portrait michelle"></div>
+        <div class="partner-content">
+          <div class="partner-name-block">
+            <span class="partner-role reveal-words">The Deal Closer</span>
+            <h3 class="reveal-words">Michelle&nbsp;Rinaldi</h3>
+          </div>
+          <div class="partner-subtitle">
+            <p class="reveal-words reveal-words--fade-only">She brings precision, a relentless negotiating instinct, an encyclopedic command of the market, and a track record of closing deals that other agents walk away from.</p>
+          </div>
+          <div class="partner-body">
+            <p class="reveal-words reveal-words--fade-only">Michelle's negotiation approach integrates two simultaneous streams of intelligence — the analytical data of the transaction and the human data of everyone in it. By synthesizing market knowledge with a finely developed ability to read people, identify real decision-makers, and sense what is driving behavior beneath the surface, she arrives at outcomes that pure analysis cannot produce.</p>
+            <p class="credentials-title">Michelle's Credentials</p>
+            <ul class="credentials">
+              <li>The only Certified Condo Specialist® in Palm Beach County</li>
+              <li>Three-time eXp Realty ICON Agent</li>
+              <li>Author, <em>The Truth About Real Estate</em> — with a dedicated condo advisory section</li>
+              <li>Three years educating agents in condo specialization across the eXp global platform</li>
+              <li>Direct HOA governance experience — Florida Statute §718</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAUL — image right, content left -->
+      <div class="partner-row reverse fade-in">
+        <div class="partner-portrait paul"></div>
+        <div class="partner-content">
+          <div class="partner-name-block">
+            <span class="partner-role reveal-words">The Relationship Builder</span>
+            <h3 class="reveal-words">Paul&nbsp;Rinaldi</h3>
+          </div>
+          <div class="partner-subtitle">
+            <p class="reveal-words reveal-words--fade-only">He brings the gravity — extraordinary patience, deep relationship intelligence, and the kind of trustworthiness that turns a single transaction into a lifelong client bond.</p>
+          </div>
+          <div class="partner-body">
+            <p class="reveal-words reveal-words--fade-only">Paul is the rare advisor who makes complex decisions feel manageable without simplifying what should not be simplified. He is the person clients call not just when they are ready to buy or sell, but when they want to understand what is happening in the market, what is coming next, and what they should be thinking about.</p>
+            <p class="credentials-title">Paul's Credentials</p>
+            <ul class="credentials">
+              <li>Described by clients as "a straight shooter" and "the most honest realtor I've met"</li>
+              <li>Decade of referral-built relationships across Palm Beach County</li>
+              <li>Long-horizon advisory across luxury condo and waterfront single-family markets</li>
+              <li>Northeast roots — Toronto by way of New York. He understands where clients come from</li>
+              <li>Licensed foster parent, active with Place of Hope</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<section class="pull-quote">
+  <div class="pull-quote-inner fade-in">
+    <span class="pull-quote-mark">"</span>
+    <blockquote class="reveal-words">The Rinaldis are not selling Palm&nbsp;Beach. They are <em>sharing</em>&nbsp;it.</blockquote>
+    <cite class="reveal-words">— The Brand Foundation</cite>
+  </div>
+</section>
+
+<!-- ============ WHAT WE CHALLENGE ============ -->
+<section class="challenge">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">What We Challenge</span>
+      <h2 class="reveal-words">The luxury real estate industry runs&nbsp;on <em>a broken&nbsp;promise.</em></h2>
+    </div>
+    <p class="challenge-intro fade-in reveal-words reveal-words--fade-only">
+      That a single agent with a good personality and a nice camera can serve a $10M+ client at the level they deserve. It cannot. The most important moves of people's lives deserve more than one person's bandwidth, one person's skills, and one person's network.
+    </p>
+
+    <div class="challenge-layout">
+      <!-- Left column: image with conclusion overlay -->
+      <div class="challenge-img fade-in">
+        <div class="challenge-img-caption">
+          <span class="challenge-img-caption-mark">"</span>
+          <p class="reveal-words">This is why the Rinaldi Group is structured as <em>a partnership</em> not a single-agent&nbsp;model.</p>
+        </div>
+      </div>
+
+      <!-- Right column: accordion of three myths -->
+      <div class="myth-list fade-in stagger-2">
+        <div class="myth open" data-myth="1">
+          <div class="myth-header">
+            <span class="myth-num">01</span>
+            <h3 class="myth-headline"><span class="myth-tag">FALSE</span>"A great agent is a great salesperson."</h3>
+            <span class="myth-toggle"></span>
+          </div>
+          <div class="myth-body">
+            <div class="myth-body-inner">
+              <p>A great advisor is a great listener — one who puts the client's long-term interests ahead of any single commission. Selling is what happens when listening has been done well.</p>
+            </div>
+          </div>
+        </div>
+        <div class="myth" data-myth="2">
+          <div class="myth-header">
+            <span class="myth-num">02</span>
+            <h3 class="myth-headline"><span class="myth-tag">FALSE</span>"Market knowledge means knowing the listings."</h3>
+            <span class="myth-toggle"></span>
+          </div>
+          <div class="myth-body">
+            <div class="myth-body-inner">
+              <p>Real insider access means knowing what is coming before it is listed, being embedded with developers before buildings open, and understanding which neighborhoods are inflecting upward before the data catches up.</p>
+            </div>
+          </div>
+        </div>
+        <div class="myth" data-myth="3">
+          <div class="myth-header">
+            <span class="myth-num">03</span>
+            <h3 class="myth-headline"><span class="myth-tag">FALSE</span>"One agent is enough."</h3>
+            <span class="myth-toggle"></span>
+          </div>
+          <div class="myth-body">
+            <div class="myth-body-inner">
+              <p>In a market moving as fast as West Palm Beach, clients deserve a partnership where one principal is always available, always engaged, and always accountable. When one pushes, the other steadies. The client always wins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE UNFAIR ADVANTAGE ============ -->
+<section class="advantage" id="advantage">
+  <div class="advantage-stage">
+    <!-- Background video — looping, muted, autoplay -->
+    <video class="advantage-stage-video" autoplay loop muted playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dcuswyfur/video/upload/v1777670141/veo-3.1-fast-generate-001_slowly_zoom_in_but_not_too_close_and_make_the_trees_leaves_are_waving_make_it_ci-0_1_txpwak.mp4" type="video/mp4">
+    </video>
+    <!-- Header inside the image -->
+    <div class="advantage-stage-header">
+      <span class="eyebrow">The Unfair Advantage</span>
+      <h2>What competitors <em>cannot credibly&nbsp;replicate.</em></h2>
+      <p>A list of differentiators is easy to write. Each of these is documented, verifiable, and — taken together — describes a position no other team in Palm Beach County currently holds.</p>
+    </div>
+
+    <!-- Cards at the bottom -->
+    <div class="advantage-grid">
+      <div class="advantage-item">
+        <span class="advantage-num">01</span>
+        <div class="advantage-content">
+          <h3>Integrated Negotiation Intelligence</h3>
+          <p>Michelle reads two streams of data simultaneously: the analytical (pricing, comps, terms, timelines) and the human (real decision-makers, motivations, what is not being said). It is a skill built across a decade of luxury condo and waterfront single-family transactions. It is not a credential. It cannot be learned from a textbook. And no competitor can credibly claim it.</p>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <span class="advantage-num">02</span>
+        <div class="advantage-content">
+          <h3>The Only Certified Condo Specialist® in Palm Beach County</h3>
+          <p>A formal credential with no equal in the market. In a county where luxury condo development is the defining asset class of the decade — Berkeley, Mr. C, South Flagler House, Olara, Shorecrest — this is not a minor distinction. It is category authority.</p>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <span class="advantage-num">03</span>
+        <div class="advantage-content">
+          <h3>A Published Book</h3>
+          <p><em>The Truth About Real Estate</em> — written by Michelle, with a dedicated section on condominium advisory. One of the only resources of its kind produced by a Palm Beach County specialist. It is verifiable, public, and nearly impossible for a competitor to replicate quickly.</p>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <span class="advantage-num">04</span>
+        <div class="advantage-content">
+          <h3>Developer Insider Access</h3>
+          <p>Active relationships at The Berkeley, Mr. C Residences, South Flagler House, Olara, and Shorecrest — the projects that define the new West Palm Beach luxury landscape. The Rinaldis are not observers of this market. They are participants in it.</p>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <span class="advantage-num">05</span>
+        <div class="advantage-content">
+          <h3>Condo Governance Expertise</h3>
+          <p>Direct knowledge of HOA governance, Florida Statute §718, and the realities of condo association membership. The Rinaldis advise buyers not just on the property they are purchasing but on the association they are joining. A dimension most agents are not equipped to address.</p>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <span class="advantage-num">06</span>
+        <div class="advantage-content">
+          <h3>A Referral-Built Reputation</h3>
+          <p>The majority of the Rinaldis' business comes from past clients who trusted them enough to send the most important people in their lives. This is not a marketing metric. It is a character reference at scale — one that any prospective client can verify by asking the right people.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARKET INSIGHT ============ -->
+<section class="market" id="market">
+  <!-- Two-column layout: text on left, image on right -->
+  <div class="container">
+    <div class="market-card fade-in">
+      <div class="market-card-overlay">
+        <span class="eyebrow">Market Insight</span>
+        <h2 class="reveal-words">Wall Street South. And the team <em>embedded&nbsp;in&nbsp;it.</em></h2>
+        <p class="reveal-words reveal-words--fade-only">West Palm Beach has undergone a structural transformation — emerging as a magnet for hedge fund managers, financial firms, and ultra-high-net-worth families seeking better tax conditions, exceptional quality of life, and a market that still offers value relative to New York and California.</p>
+        <p class="reveal-words reveal-words--fade-only">The Rinaldis built their reputation by becoming the definitive experts in one of Palm Beach County's most distinctive waterfront communities — Singer Island. That depth of mastery is now being extended across the broader county market.</p>
+        <p class="italic reveal-words">Singer Island is not the ceiling. It is where the craft was mastered. The expansion across Palm Beach County is the natural extension of a decade of focused&nbsp;work.</p>
+      </div>
+      <div class="market-card-image"></div>
+    </div>
+
+    <div class="developments-header fade-in">
+      <h3 class="reveal-words">Active Developer Relationships</h3>
+      <p class="reveal-words reveal-words--fade-only">Defining projects of the new West Palm Beach luxury landscape</p>
+    </div>
+
+    <div class="developments-carousel fade-in" id="dev-carousel">
+      <div class="developments" id="dev-cards">
+        <div class="development active" data-index="0">
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661399/1_ou8lvb.png');"></div>
+          <div class="dev-card-overlay">
+            <h3 class="dev-name">The Berkeley</h3>
+            <div class="dev-meta-row">
+              <span class="dev-detail">26-Story Waterfront</span>
+              <span class="dev-price">$1.8M – $7.5M</span>
+            </div>
+            <div class="dev-dots">
+              <button class="dev-dot active" data-target="0" aria-label="View card 1"></button>
+              <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
+              <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
+              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
+              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
+            </div>
+          </div>
+        </div>
+        <div class="development" data-index="1">
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661706/mmmc_msi2us.webp');"></div>
+          <div class="dev-card-overlay">
+            <h3 class="dev-name">Mr. C Residences</h3>
+            <div class="dev-meta-row">
+              <span class="dev-detail">Ultra-Luxury Tower</span>
+              <span class="dev-price">$5M+</span>
+            </div>
+            <div class="dev-dots">
+              <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
+              <button class="dev-dot active" data-target="1" aria-label="View card 2"></button>
+              <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
+              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
+              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
+            </div>
+          </div>
+        </div>
+        <div class="development" data-index="2">
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661843/kk_u4m9yu.jpg');"></div>
+          <div class="dev-card-overlay">
+            <h3 class="dev-name">South Flagler House</h3>
+            <div class="dev-meta-row">
+              <span class="dev-detail">Premier Address</span>
+              <span class="dev-price">$10M+</span>
+            </div>
+            <div class="dev-dots">
+              <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
+              <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
+              <button class="dev-dot active" data-target="2" aria-label="View card 3"></button>
+              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
+              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
+            </div>
+          </div>
+        </div>
+        <div class="development" data-index="3">
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661426/oll_vgpzgj.jpg');"></div>
+          <div class="dev-card-overlay">
+            <h3 class="dev-name">Olara</h3>
+            <div class="dev-meta-row">
+              <span class="dev-detail">Waterfront Living</span>
+              <span class="dev-price">$2M – $15M</span>
+            </div>
+            <div class="dev-dots">
+              <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
+              <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
+              <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
+              <button class="dev-dot active" data-target="3" aria-label="View card 4"></button>
+              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
+            </div>
+          </div>
+        </div>
+        <div class="development" data-index="4">
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661577/kk_mfr33g.webp');"></div>
+          <div class="dev-card-overlay">
+            <h3 class="dev-name">Shorecrest</h3>
+            <div class="dev-meta-row">
+              <span class="dev-detail">Boutique Luxury</span>
+              <span class="dev-price">By Inquiry</span>
+            </div>
+            <div class="dev-dots">
+              <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
+              <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
+              <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
+              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
+              <button class="dev-dot active" data-target="4" aria-label="View card 5"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation arrows (bottom-right of carousel) -->
+      <div class="dev-nav">
+        <button class="dev-nav-btn" id="dev-prev" aria-label="Previous development">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="dev-nav-btn" id="dev-next" aria-label="Next development">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUR PILLARS ============ -->
+<section class="pillars">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">The Four Pillars</span>
+      <h2 class="reveal-words">How the&nbsp;Rinaldi&nbsp;Group <em>actually&nbsp;operates.</em></h2>
+      <p class="lede reveal-words">Four commitments that govern every client relationship — from first conversation to closing, and far beyond.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <!-- Left column — vertical tab list -->
+      <div class="pillar-tabs fade-in" role="tablist">
+        <button class="pillar-tab active" data-target="0" role="tab" aria-selected="true">
+          <span class="pillar-tab-num">I</span>
+          <span class="pillar-tab-title">The Power Couple Advantage</span>
+        </button>
+        <button class="pillar-tab" data-target="1" role="tab">
+          <span class="pillar-tab-num">II</span>
+          <span class="pillar-tab-title">Insider Market Access</span>
+        </button>
+        <button class="pillar-tab" data-target="2" role="tab">
+          <span class="pillar-tab-num">III</span>
+          <span class="pillar-tab-title">Relentless Execution</span>
+        </button>
+        <button class="pillar-tab" data-target="3" role="tab">
+          <span class="pillar-tab-num">IV</span>
+          <span class="pillar-tab-title">Community Roots</span>
+        </button>
+      </div>
+
+      <!-- Right column — content panels (only the active one is visible) -->
+      <div class="pillar-panels fade-in stagger-2">
+        <div class="pillar-panel active" data-index="0" role="tabpanel">
+          <span class="pillar-panel-bignum">I</span>
+          <h3>The Power Couple Advantage</h3>
+          <span class="pillar-panel-tag">Two complementary strengths. One unified outcome.</span>
+          <p>Michelle closes. Paul connects. Together, they cover every dimension of a high-stakes real estate move.</p>
+          <ul>
+            <li>Three-time eXp ICON Agent — Michelle</li>
+            <li>Decade of working as a complementary partnership</li>
+            <li>Referral-built business — most clients come from past client recommendations</li>
+            <li>Recognized as a true power couple by industry peers</li>
+          </ul>
+        </div>
+
+        <div class="pillar-panel" data-index="1" role="tabpanel">
+          <span class="pillar-panel-bignum">II</span>
+          <h3>Insider Market Access</h3>
+          <p>The Rinaldis are not watching the West Palm Beach market develop from the outside. They are embedded in the most significant new developments before they open to the public.</p>
+          <ul>
+            <li>The Berkeley, Mr. C Residences, South Flagler House, Olara, Shorecrest</li>
+            <li>Only Certified Condo Specialist® in Palm Beach County</li>
+            <li>30+ years combined experience across Singer Island and Palm Beach County</li>
+            <li><em>The Truth About Real Estate</em> — published by Michelle, with a condo advisory section</li>
+          </ul>
+        </div>
+
+        <div class="pillar-panel" data-index="2" role="tabpanel">
+          <span class="pillar-panel-bignum">III</span>
+          <h3>Relentless Execution</h3>
+          <p>Michelle does not drop deals. She reads market data and human behavior simultaneously — identifying the real decision-maker and sensing what drives each party — and delivers outcomes that pure analysis alone cannot produce.</p>
+          <ul>
+            <li>Full-price offer in 10 days while nearby units sat 250+ days</li>
+            <li>Managed flawless 30-day close while client was at a silent retreat</li>
+            <li>Active across luxury condo and waterfront single-family transactions</li>
+            <li>86+ five-star reviews across multiple platforms</li>
+          </ul>
+        </div>
+
+        <div class="pillar-panel" data-index="3" role="tabpanel">
+          <span class="pillar-panel-bignum">IV</span>
+          <h3>Community Roots</h3>
+          <p>The Rinaldis did not just move to Palm Beach County — they invested in it. Their commitment to this community goes far beyond commission.</p>
+          <ul>
+            <li>Licensed foster parents in the state of Florida — active with Place of Hope</li>
+            <li>In the early development phase of a philanthropic real estate initiative focused on transitional housing for young adults in Palm Beach County, in collaboration with Vita Nova</li>
+            <li>Three years educating agents globally in condo specialization through eXp Realty</li>
+            <li>Both Northeast-rooted — they understand where their clients come from</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTHORITY ============ -->
+<section class="authority" id="authority">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Beyond the Transaction</span>
+      <h2 class="reveal-words">A&nbsp;category&nbsp;authority — <em>not simply a&nbsp;category&nbsp;practitioner.</em></h2>
+      <p class="lede reveal-words">What sets Michelle apart is not just what she has sold. It is what she has taught, written, and continues to be asked about by other professionals.</p>
+    </div>
+
+    <div class="authority-layout">
+      <!-- Left column: heading (sticky) -->
+      <div class="authority-heading fade-in">
+        <span class="eyebrow">Beyond the Transaction</span>
+        <h2 class="reveal-words">A&nbsp;category&nbsp;authority — <em>not simply a&nbsp;category&nbsp;practitioner.</em></h2>
+        <p class="lede reveal-words">What sets Michelle apart is not just what she has sold. It is what she has taught, written, and continues to be asked about by other professionals.</p>
+      </div>
+
+      <!-- Right column: accordion -->
+      <div class="authority-accordion fade-in stagger-2">
+        <div class="authority-card" data-card="1">
+          <div class="authority-card-header">
+            <span class="authority-card-num">I</span>
+            <h3 class="authority-card-title">The Published Book</h3>
+            <span class="authority-card-toggle"></span>
+          </div>
+          <div class="authority-card-body">
+            <div class="authority-card-body-inner">
+              <p><em>The Truth About Real Estate</em> includes a dedicated section on condominium advisory — one of the only resources of its kind produced by a Palm Beach County specialist. It is concrete, verifiable, and a hard credential most competitors cannot match.</p>
+            </div>
+          </div>
+        </div>
+        <div class="authority-card" data-card="2">
+          <div class="authority-card-header">
+            <span class="authority-card-num">II</span>
+            <h3 class="authority-card-title">The Educator Platform</h3>
+            <span class="authority-card-toggle"></span>
+          </div>
+          <div class="authority-card-body">
+            <div class="authority-card-body-inner">
+              <p>Three years teaching condo specialization to agents across the eXp Realty global platform — and an ongoing peer advisory role: agents from across the country call Michelle for guidance on condo pricing, buyer education, and complex problem-solving.</p>
+            </div>
+          </div>
+        </div>
+        <div class="authority-card" data-card="3">
+          <div class="authority-card-header">
+            <span class="authority-card-num">III</span>
+            <h3 class="authority-card-title">HOA &amp; Governance Expertise</h3>
+            <span class="authority-card-toggle"></span>
+          </div>
+          <div class="authority-card-body">
+            <div class="authority-card-body-inner">
+              <p>Direct experience with HOA governance and Florida Statute §718 means the Rinaldis advise buyers not just on the property they are purchasing but on the association they are joining. A dimension most agents are simply not equipped to address.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER PHILOSOPHY ============ -->
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-layout">
+      <div class="philosophy-img fade-in"></div>
+      <div class="philosophy-text fade-in stagger-2">
+        <div class="philosophy-name-block">
+          <span class="eyebrow">Founder Philosophy</span>
+          <h2 class="reveal-words">Not a&nbsp;marketing&nbsp;story. <em>A&nbsp;life&nbsp;story.</em></h2>
+        </div>
+        <p class="lede reveal-words reveal-words--fade-only">Michelle came from Suffern, New York. Paul came from Toronto. They both moved to South Florida and built something rare: a life that is deeply woven into the fabric of a place, not just a career built in it.</p>
+        <p class="reveal-words reveal-words--fade-only">Michelle built her Singer Island business without a pre-existing sphere of influence — from scratch, organically. That is not just a relocation story. It is proof of concept for every client now considering the same move.</p>
+        <p class="reveal-words reveal-words--fade-only">They made West Palm Beach their home, built their careers here, raised a family here, and chose to invest in this community as licensed foster parents working with Place of Hope. They are now in the early development phase of a philanthropic real estate initiative focused on transitional housing for young adults in Palm Beach County, in collaboration with Vita Nova — currently identifying where their skills and resources can be most meaningfully applied.</p>
+        <p class="closing reveal-words">That is the reason clients trust them with their largest assets and most important decisions. The Rinaldis are not selling Palm Beach. They are <strong>sharing</strong>&nbsp;it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO WE WORK WITH ============ -->
+<section class="who">
+  <div class="who-inner fade-in">
+    <span class="eyebrow">Who We Work With</span>
+    <h2 style="margin-top: 1.5rem;" class="reveal-words">For clients who recognize the&nbsp;value&nbsp;of <em>a long-term real estate&nbsp;relationship.</em></h2>
+    <p class="reveal-words reveal-words--fade-only">The Rinaldi Group is designed for clients who prioritize depth of advisory over speed of transaction — relocating individuals and families, in-market sellers at the $5M+ tier, and investors entering the new Palm Beach County development pipeline. If you are searching for a partner who will still be in your contacts a decade from now, you are searching for the Rinaldis.</p>
+    <a href="#contact" class="btn btn-primary">Begin a Conversation</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-layout">
+    <div class="contact-left fade-in">
+      <span class="eyebrow">Begin a Conversation</span>
+      <h2 style="margin-top: 1.5rem;" class="reveal-words">The first response <em>comes from us,&nbsp;personally.</em></h2>
+      <p class="lede reveal-words reveal-words--fade-only">Whether you are exploring a relocation, considering a sale, evaluating the new development pipeline, or simply want a sense of where the market is heading — Michelle or Paul will respond directly.</p>
+    </div>
+
+    <form class="contact-form fade-in stagger-2" onsubmit="event.preventDefault(); alert('Thank you. Michelle or Paul will be in touch directly.');">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="reason">Reason for Reaching Out</label>
+        <select id="reason" required>
+          <option value="">Select one</option>
+          <option>Relocation advisory</option>
+          <option>Listing my property</option>
+          <option>New development access</option>
+          <option>Portfolio review</option>
+          <option>The Rinaldi Report</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">A Few Words on What You're Considering</label>
+        <textarea id="message" placeholder="Share what's on your mind..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send to the Rinaldis</button>
+    </form>
+  </div>
+</section>
+
+<!-- Wide video strip beneath contact section — looping, muted, autoplay -->
+<div class="contact-image-strip fade-in">
+  <video autoplay loop muted playsinline preload="auto">
+    <source src="https://res.cloudinary.com/dcuswyfur/video/upload/v1777668034/veo-3.1-fast-generate-001_slowly_zoom_in_but_not_too_close_and_make_the_trees_leaves_are_waving_make_it_ci-0_gf31y8.mp4" type="video/mp4">
+  </video>
+  <div class="contact-image-strip-logo"></div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-mark"></span>Rinaldi Group</a>
+        <p>The insider power couple of Palm Beach County. Two instincts. One outcome. Yours.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#partnership">The Couple</a>
+        <a href="#advantage">The Advantage</a>
+        <a href="#market">Market</a>
+        <a href="#authority">Authority</a>
+        <a href="#contact">Begin a Conversation</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Rinaldi Group</p>
+      <p>Palm Beach County, Florida</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Orphan & runt prevention — bind short words to following word
+  function preventOrphans() {
+    const shortWords = /\b(a|an|of|to|in|on|at|is|it|or|as|by|the|and|for|but|nor|so|if|do|we|us|my|me|he|she|her|him|our|its|are|was|be|too|all|any|few|new|old|own|up)\s/gi;
+
+    const selectors = [
+      'h1', 'h2', 'h3', 'h4',
+      'blockquote',
+      '.hero-tagline',
+      '.lede',
+      '.intro-prose',
+      '.challenge-intro',
+      '.advantage-intro',
+      '.challenge-conclusion',
+      '.philosophy .closing',
+      '.referral-line p',
+      '.market-text p.italic'
+    ];
+
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        const textNodes = [];
+        let node;
+        while (node = walker.nextNode()) textNodes.push(node);
+
+        textNodes.forEach(tn => {
+          tn.nodeValue = tn.nodeValue.replace(shortWords, (match, word) => {
+            return word + '\u00A0';
+          });
+        });
+      });
+    });
+  }
+
+  preventOrphans();
+
+  // ============ SCROLL-LINKED WORD REVEAL ============
+  // Splits text into per-word spans and animates opacity based on scroll position
+  function initWordReveal() {
+    // Wrap each text node's words in <span class="word">
+    function wrapWords(element) {
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while (node = walker.nextNode()) {
+        // Skip empty/whitespace-only text nodes
+        if (node.nodeValue.trim().length > 0) textNodes.push(node);
+      }
+
+      textNodes.forEach(textNode => {
+        const text = textNode.nodeValue;
+        // Split on regular whitespace ONLY, not non-breaking spaces.
+        // This preserves nbsp-bound word groups (e.g. "Palm\u00A0Beach\u00A0County") as one "word"
+        const parts = text.split(/([ \t\n\r]+)/);
+        const fragment = document.createDocumentFragment();
+
+        parts.forEach(part => {
+          if (part.length === 0) return;
+          if (/^[ \t\n\r]+$/.test(part)) {
+            // Whitespace — preserve as-is
+            fragment.appendChild(document.createTextNode(part));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = part;
+            fragment.appendChild(span);
+          }
+        });
+
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+    }
+
+    // Apply to all .reveal-words elements
+    const revealElements = document.querySelectorAll('.reveal-words');
+    revealElements.forEach(el => wrapWords(el));
+
+    // Cache parent elements with their words
+    const parentRefs = Array.from(revealElements).map(parent => ({
+      el: parent,
+      words: Array.from(parent.querySelectorAll('.word')),
+      isFadeOnly: parent.classList.contains('reveal-words--fade-only')
+    }));
+
+    // Update each word's opacity directly from scroll position.
+    // The "reveal arc" for each element spans from when its TOP enters the bottom-third
+    // of the viewport to when its TOP reaches the upper-third. Within that arc,
+    // each word has its own sub-range — earlier words reveal first.
+    let ticking = false;
+    function updateWords() {
+      const viewportHeight = window.innerHeight;
+      // The scroll-zone for revealing — words light up as parent passes through this band
+      const revealZoneStart = viewportHeight * 0.85;  // word at this position = start of reveal
+      const revealZoneEnd = viewportHeight * 0.45;    // word at this position = fully revealed
+      const zoneSize = revealZoneStart - revealZoneEnd;
+
+      parentRefs.forEach(ref => {
+        const rect = ref.el.getBoundingClientRect();
+        const parentTop = rect.top;
+        const parentHeight = rect.height;
+        const wordCount = ref.words.length;
+
+        // For each word, calculate its individual trigger position within the parent's vertical span
+        ref.words.forEach((word, index) => {
+          // Each word's "anchor point" is distributed across the parent's height
+          // First word anchors at the top, last word anchors near the bottom
+          const wordOffset = (index / Math.max(wordCount - 1, 1)) * parentHeight * 0.7;
+          const wordPosition = parentTop + wordOffset;
+
+          // Calculate progress: 0 = not yet revealed, 1 = fully revealed
+          let progress;
+          if (wordPosition >= revealZoneStart) {
+            progress = 0;
+          } else if (wordPosition <= revealZoneEnd) {
+            progress = 1;
+          } else {
+            progress = (revealZoneStart - wordPosition) / zoneSize;
+          }
+
+          // Apply opacity directly — interpolate from 0.18 to 1.0
+          const opacity = 0.18 + progress * 0.82;
+          word.style.opacity = opacity.toFixed(3);
+
+          // Apply translateY (only for non-fade-only) — interpolate from 8px to 0
+          if (!ref.isFadeOnly) {
+            const translateY = 8 - progress * 8;
+            word.style.transform = `translateY(${translateY.toFixed(2)}px)`;
+          }
+        });
+      });
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateWords);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateWords(); // Initial call
+  }
+
+  initWordReveal();
+
+  // ============ ADVANTAGE CARDS — SEQUENTIAL REVEAL ============
+  // When the advantage grid enters the viewport, reveal cards one by one with a stagger.
+  // Each card's number → title → body cascade is handled by CSS transition-delay.
+  function initAdvantageReveal() {
+    const grid = document.querySelector('.advantage-grid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.advantage-item');
+    if (cards.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger reveal: card 1 immediately, card 2 after 280ms, etc.
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('revealed');
+            }, index * 280);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+
+    observer.observe(grid);
+  }
+
+  initAdvantageReveal();
+
+  // ============ AUTHORITY ACCORDION ============
+  // Click to expand/collapse cards. Only one open at a time.
+  function initAuthorityAccordion() {
+    const cards = document.querySelectorAll('.authority-card');
+    if (cards.length === 0) return;
+
+    cards.forEach((card, index) => {
+      const header = card.querySelector('.authority-card-header');
+      if (!header) return;
+
+      header.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+
+        // Close all cards first
+        cards.forEach(c => c.classList.remove('open'));
+
+        // Open this one (if it wasn't already open — toggle behavior)
+        if (!isOpen) {
+          card.classList.add('open');
+        }
+      });
+    });
+
+    // Open the first card by default so visitors see what to expect
+    cards[0].classList.add('open');
+  }
+
+  initAuthorityAccordion();
+
+  // ============ DEVELOPER CAROUSEL ============
+  // Single-card carousel with auto-advance every 3 seconds.
+  // Pauses on hover (so the user can read), resumes when mouse leaves.
+  // Each card has its own internal line-pagination row inside the overlay; we sync all of them.
+  function initDevCarousel() {
+    const cards = document.querySelectorAll('.developments .development');
+    const allDots = document.querySelectorAll('.dev-dots .dev-dot');
+    if (cards.length === 0) return;
+
+    let activeIndex = 0;
+    const total = cards.length;
+    const ADVANCE_MS = 3000;
+    let autoTimer = null;
+
+    function show(index) {
+      // Wrap around in both directions
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      activeIndex = index;
+      cards.forEach((card, i) => card.classList.toggle('active', i === activeIndex));
+      // Sync all per-card pagination rows so the active line reflects current index
+      allDots.forEach(dot => {
+        const target = parseInt(dot.dataset.target, 10);
+        dot.classList.toggle('active', target === activeIndex);
+      });
+    }
+
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(() => show(activeIndex + 1), ADVANCE_MS);
+    }
+    function stopAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+
+    // Click any line to jump directly — and reset the auto timer
+    allDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const target = parseInt(dot.dataset.target, 10);
+        if (!isNaN(target)) {
+          show(target);
+          startAuto(); // reset the timer so the next slide isn't immediate
+        }
+      });
+    });
+
+    // Keyboard support: left/right arrows when carousel is in viewport
+    const carousel = document.getElementById('dev-carousel');
+    if (carousel) {
+      carousel.setAttribute('tabindex', '0');
+      carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); show(activeIndex - 1); startAuto(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(activeIndex + 1); startAuto(); }
+      });
+      // Pause on hover, resume on leave — user politeness
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', startAuto);
+    }
+
+    startAuto();
+  }
+
+  initDevCarousel();
+
+  // ============ FOUR PILLARS TABS ============
+  // Vertical tabs on the left, content panels on the right.
+  // Click a tab to switch — only one panel visible at a time, cross-fade transition.
+  function initPillarTabs() {
+    const tabs = document.querySelectorAll('.pillar-tab');
+    const panels = document.querySelectorAll('.pillar-panel');
+    if (tabs.length === 0 || panels.length === 0) return;
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = parseInt(tab.dataset.target, 10);
+        if (isNaN(target)) return;
+
+        tabs.forEach((t, i) => {
+          t.classList.toggle('active', i === target);
+          t.setAttribute('aria-selected', i === target ? 'true' : 'false');
+        });
+        panels.forEach((p, i) => p.classList.toggle('active', i === target));
+      });
+    });
+  }
+
+  initPillarTabs();
+
+  // ============ MYTHS ACCORDION ============
+  // Click to expand/collapse — only one open at a time. First open by default.
+  function initMythAccordion() {
+    const myths = document.querySelectorAll('.myth');
+    if (myths.length === 0) return;
+
+    myths.forEach(myth => {
+      const header = myth.querySelector('.myth-header');
+      if (!header) return;
+      header.addEventListener('click', () => {
+        const isOpen = myth.classList.contains('open');
+        myths.forEach(m => m.classList.remove('open'));
+        if (!isOpen) myth.classList.add('open');
+      });
+    });
+  }
+
+  initMythAccordion();
+
+  // ============ ADVANTAGE STAGE HEADER — smooth sequential reveal ============
+  // Replaces the per-word reveal with a calmer eyebrow → headline → intro cascade.
+  function initAdvantageHeaderReveal() {
+    const header = document.querySelector('.advantage-stage-header');
+    if (!header) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          header.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+    observer.observe(header);
+  }
+  initAdvantageHeaderReveal();
+</script>
+
+</body>
+</html>

@@ -197,8 +197,9 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(90deg, rgba(26,31,34,0.75) 0%, rgba(26,31,34,0.55) 35%, rgba(26,31,34,0.25) 60%, rgba(26,31,34,0.15) 100%),
-      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777643897/RinaldiHeroSection_slizzc.jpg');
+      linear-gradient(180deg, rgba(26,31,34,0.55) 0%, rgba(26,31,34,0.10) 12%, transparent 25%),
+      linear-gradient(90deg, rgba(26,31,34,0.88) 0%, rgba(26,31,34,0.72) 30%, rgba(26,31,34,0.40) 55%, rgba(26,31,34,0.10) 100%),
+      url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779732646/zmagdaphoto-5274.remini-enhanced__2_1_ysqfig.png');
     background-size: cover;
     background-position: center;
   }
@@ -252,29 +253,44 @@
   .hero .btn-primary {
     background: #E8E0C4;
     color: var(--soft-black);
+    border-color: #E8E0C4;
   }
   .hero .btn-primary:hover {
-    background: #F2ECD8;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    color: var(--soft-black);
     transform: translateY(-1px);
   }
   .hero .btn-ghost {
-    border-color: rgba(242, 236, 221, 0.45);
-    color: var(--light);
+    border-color: rgba(242, 236, 221, 0.55);
+    color: #FFFFFF;
     background: transparent;
   }
   .hero .btn-ghost:hover {
-    border-color: var(--light);
-    color: var(--light);
-    background: rgba(242, 236, 221, 0.08);
+    border-color: #FFFFFF;
+    color: var(--soft-black);
+    background: #FFFFFF;
+  }
+  /* Logo badge below hero CTAs */
+  .hero-logo-badge {
+    margin-top: 2.5rem;
+    display: block;
+  }
+  .hero-logo-badge img {
+    height: 52px;
+    width: auto;
+    opacity: 0.90;
+    filter: brightness(0) invert(1);
   }
   .hero-tagline {
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(20px, 2vw, 28px);
-    color: var(--light);
-    opacity: 0.85;
+    font-size: clamp(22px, 2.2vw, 32px);
+    color: #FFFFFF;
+    opacity: 1;
     margin-bottom: 2rem;
-    font-weight: 300;
+    font-weight: 400;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.35);
   }
   .hero-ctas {
     display: flex;
@@ -575,7 +591,7 @@
     max-width: 880px;
     margin: 0 auto 4rem;
     padding-bottom: 3rem;
-    border-bottom: 0.5px solid rgba(26, 31, 34, 0.15);
+    border-bottom: none;
   }
   .anchor-text .label {
     margin-bottom: 1.5rem;
@@ -588,11 +604,7 @@
   }
   .anchor-text .label::before,
   .anchor-text .label::after {
-    content: '';
-    width: 36px;
-    height: 1px;
-    background: var(--sage);
-    opacity: 0.5;
+    display: none;
   }
   .anchor-text h3 {
     font-family: var(--serif);
@@ -609,52 +621,38 @@
     color: var(--sage);
     font-weight: 400;
   }
-  /* Stats row — quietly anchored beneath the headline */
-  .anchor-stats {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    margin: 0;
+  /* Credentials list — 2 columns */
+  .anchor-creds {
+    list-style: none;
     padding: 0;
-    border-bottom: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: none;
+    padding-top: 0;
+    text-align: left;
   }
-  .anchor-stat {
-    text-align: center;
-    padding: 0 1.5rem;
-    position: relative;
-  }
-  .anchor-stat + .anchor-stat::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 12%;
-    bottom: 12%;
-    width: 1px;
-    background: rgba(26, 31, 34, 0.12);
-  }
-  .anchor-stat-num {
-    font-family: var(--serif);
-    font-size: clamp(44px, 4.8vw, 64px);
-    font-weight: 400;
-    color: var(--sage);
-    line-height: 0.95;
-    letter-spacing: -0.005em;
-    font-style: italic;
-    margin-bottom: 1rem;
-    display: block;
-  }
-  .anchor-stat-num.text-stat {
-    font-size: clamp(26px, 2.6vw, 36px);
-    line-height: 1.1;
-    padding-top: clamp(18px, 2.2vw, 28px);
-    letter-spacing: -0.003em;
-  }
-  .anchor-stat-text {
-    font-size: 11.5px;
-    line-height: 1.55;
+  .anchor-creds li {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.5;
     color: var(--soft-black);
-    opacity: 0.7;
-    letter-spacing: 0.04em;
+    opacity: 0.82;
+    padding: 0.75rem 2rem 0.75rem 1.25rem;
+    border-bottom: 0.5px solid rgba(26, 31, 34, 0.08);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .anchor-creds li::before {
+    content: '';
+    width: 5px;
+    height: 1px;
+    background: var(--sage);
+    flex-shrink: 0;
+    margin-top: 0.7em;
   }
 
   /* ============ REFERRAL LINE ============ */
@@ -682,6 +680,7 @@
   .partnership {
     background: var(--paper);
     position: relative;
+    padding-bottom: 10rem;
   }
   .partnership .section-header {
     margin-bottom: 1.5rem;
@@ -698,7 +697,7 @@
   .partner-grid {
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    gap: 12rem;
     margin-top: 4rem;
   }
   /* Editorial row: image on one side, content on the other, with subtitle block overlapping the image */
@@ -708,12 +707,14 @@
     gap: 0;
     align-items: stretch;
     position: relative;
+    isolation: isolate;
   }
   .partner-portrait {
     width: 100%;
-    aspect-ratio: 4/5;
+    height: 100%;
+    min-height: 600px;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     margin-bottom: 0;
     filter: grayscale(8%) contrast(1.04);
     grid-column: 1;
@@ -1043,16 +1044,6 @@
     letter-spacing: -0.005em;
     transition: color 0.3s ease;
   }
-  .myth-tag {
-    display: inline-block;
-    font-family: var(--sans);
-    font-size: 10px;
-    letter-spacing: 0.28em;
-    color: var(--sage);
-    margin-right: 12px;
-    vertical-align: 4px;
-    font-weight: 500;
-  }
   /* Plus/minus toggle indicator */
   .myth-toggle {
     width: 24px;
@@ -1163,8 +1154,7 @@
     pointer-events: none;
   }
   /* Header and grid sit above the video + overlay */
-  .advantage-stage-header,
-  .advantage-grid {
+  .advantage-stage-header {
     position: relative;
     z-index: 2;
   }
@@ -1245,57 +1235,76 @@
   }
   /* 6-column card grid — fixed at bottom of stage */
   .advantage-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    border-top: 0.5px solid rgba(255, 255, 255, 0.22);
-    margin-top: auto;
+    height: 300px;
+    overflow: hidden;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    z-index: 2;
   }
   .advantage-item {
     position: relative;
-    padding: 2.5rem 1.75rem 2.5rem;
-    color: var(--light);
-    cursor: default;
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
-    min-height: 300px;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    transition: opacity 0.5s ease, background 0.5s ease;
+    padding: 2rem 2rem;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.10);
+    background: rgba(26, 31, 34, 0.35);
   }
-  .advantage-item + .advantage-item {
-    border-left: 0.5px solid rgba(255, 255, 255, 0.22);
+  .advantage-item:last-child { border-right: none; }
+  .advantage-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(26, 31, 34, 0.10) 0%,
+      rgba(26, 31, 34, 0.65) 100%);
+    z-index: 0;
+    transition: background 0.5s ease;
   }
-  /* Hover dim — others fade back, hovered card pops with darker backdrop */
+  .advantage-item:hover::before {
+    background: linear-gradient(180deg,
+      rgba(26, 31, 34, 0.30) 0%,
+      rgba(26, 31, 34, 0.88) 100%);
+  }
+  /* Expand hovered, shrink others */
   .advantage-grid:hover .advantage-item {
-    opacity: 0.55;
+    flex: 0.5;
   }
   .advantage-grid:hover .advantage-item:hover {
-    opacity: 1;
-    background: rgba(26, 31, 34, 0.55);
+    flex: 3;
   }
-  /* Big number sits right above the title — no empty middle */
+  /* Number */
   .advantage-num {
     font-family: var(--serif);
-    font-size: clamp(56px, 5.5vw, 92px);
-    color: rgba(255, 255, 255, 0.45);
+    font-size: 14px;
+    color: var(--sage-bright);
     font-weight: 400;
     font-style: italic;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.08em;
     display: block;
-    line-height: 0.9;
-    margin-bottom: 1.25rem;
-    transition: color 0.4s ease;
+    line-height: 1;
+    margin-bottom: 0.85rem;
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
-  .advantage-item:hover .advantage-num {
-    color: #FFFFFF;
-  }
-  .advantage-num small {
-    display: none;
-  }
-  /* Content block — title visible at rest, body reveals on hover */
+  .advantage-num small { display: none; }
   .advantage-content {
-    /* No margin-top:auto needed — parent justify-content:flex-end handles bottom anchoring */
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
   .advantage-item h3 {
     font-family: var(--sans);
@@ -1306,74 +1315,51 @@
     margin-bottom: 0;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    text-wrap: balance;
-    transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: margin-bottom 0.4s ease;
+    white-space: normal;
   }
-  /* Body — hidden at rest, fades up beneath the title on hover */
+  .advantage-item:hover h3 {
+    margin-bottom: 1rem;
+  }
+  /* Body — hidden at rest, reveals on hover */
   .advantage-item p {
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: #FFFFFF;
-    text-transform: none;
-    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(242, 236, 221, 0.90);
     font-weight: 400;
-    opacity: 0;
+    margin: 0;
     max-height: 0;
-    margin-top: 0;
     overflow: hidden;
-    transform: translateY(8px);
+    opacity: 0;
+    transform: translateY(6px);
     transition:
-      opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
-      max-height 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
-      margin-top 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
-      transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-    pointer-events: none;
+      max-height 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s,
+      transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s;
   }
   .advantage-item:hover p {
+    max-height: 300px;
     opacity: 1;
-    max-height: 500px;
-    margin-top: 1rem;
     transform: translateY(0);
-    pointer-events: auto;
-    transition-delay: 0.1s;
   }
   .advantage-item p em {
-    color: #FFFFFF;
+    color: var(--sage-bright);
     font-style: italic;
   }
-  /* Sequential card entrance — number + title cascade in when section enters viewport */
   .advantage-num,
   .advantage-content {
-    opacity: 0;
-    transform: translateY(12px);
-    transition:
-      opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
-      transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
-      color 0.4s ease;
-  }
-  .advantage-item.revealed .advantage-num {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0ms;
+    transform: none;
+    transition: none;
   }
+  .advantage-item.revealed .advantage-num,
   .advantage-item.revealed .advantage-content {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: 200ms;
-  }
-  /* Override to ensure num color transition still works after reveal */
-  .advantage-item.revealed:hover .advantage-num {
-    color: rgba(242, 236, 221, 0.85);
+    transform: none;
   }
   @media (prefers-reduced-motion: reduce) {
-    .advantage-num,
-    .advantage-content,
-    .advantage-item p {
-      opacity: 1;
-      transform: none;
-      transition: none;
-      max-height: none;
-    }
+    .advantage-item { transition: none; }
+    .advantage-item p { opacity: 1; max-height: none; transform: none; transition: none; }
   }
 
   /* ============ MARKET INSIGHT ============ */
@@ -1905,6 +1891,179 @@
     font-style: italic;
   }
 
+  /* ============ TESTIMONIALS ============ */
+  .testimonials {
+    background: var(--paper);
+    padding: 8rem 4rem;
+    border-top: 0.5px solid rgba(26, 31, 34, 0.12);
+    text-align: center;
+  }
+  .testimonials .section-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonials .section-header .eyebrow {
+    justify-content: center;
+    display: flex;
+  }
+  .testimonials .section-header h2 {
+    text-align: center;
+  }
+  .testimonials .section-header p.lede {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonials-intro {
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--soft-black);
+    opacity: 0.75;
+    max-width: 540px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+  /* Source label */
+  .testimonials-row-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 3rem;
+    text-align: center;
+    display: block;
+  }
+  /* Carousel container */
+  .testimonials-carousel {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto 3rem;
+  }
+  /* Single card — one visible at a time */
+  .testimonial-card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+  .testimonial-card.active {
+    display: flex;
+  }
+  /* Large opening quote mark */
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 80px;
+    line-height: 0.7;
+    color: var(--sage);
+    opacity: 0.3;
+    display: block;
+    margin-bottom: -1rem;
+  }
+  .testimonial-lead {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(24px, 2.4vw, 34px);
+    line-height: 1.35;
+    color: var(--soft-black);
+    text-align: center;
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+  .testimonial-body {
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--soft-black);
+    opacity: 0.72;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .testimonial-attribution {
+    border-top: none;
+    padding-top: 0;
+    font-family: var(--sans);
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--soft-black);
+    opacity: 0.6;
+    text-align: center;
+  }
+  .testimonial-attribution strong {
+    display: block;
+    font-weight: 500;
+    color: var(--soft-black);
+    opacity: 0.85;
+    margin-bottom: 0.15rem;
+    font-size: 13px;
+  }
+  /* Dot navigation */
+  .testimonials-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 4rem;
+  }
+  .testimonials-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(26, 31, 34, 0.20);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+  }
+  .testimonials-dot.active {
+    background: var(--sage);
+    transform: scale(1.3);
+  }
+  /* Pending professional row */
+  .testimonials-pending {
+    background: rgba(26, 31, 34, 0.03);
+    border: 0.5px dashed rgba(26, 31, 34, 0.18);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .testimonials-pending-icon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 48px;
+    color: var(--sage);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .testimonials-pending p {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--soft-black);
+    opacity: 0.55;
+    margin: 0;
+  }
+  .testimonials-pending p strong {
+    font-weight: 500;
+    color: var(--soft-black);
+    opacity: 0.75;
+  }
+
   /* ============ AUTHORITY ============ */
   .authority {
     background: var(--soft-black);
@@ -2090,6 +2249,43 @@
   .authority-card-body p em {
     color: var(--sage-bright);
     font-style: italic;
+  }
+  /* Book layout inside card I */
+  .authority-book {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .authority-book-cover {
+    width: 120px;
+    aspect-ratio: 2/3;
+    background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779733614/ChatGPT_Image_25_May_2026_21_26_16_emdzq5.png');
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .authority-book-cover span {
+    display: none;
+  }
+  .authority-book-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .authority-download {
+    align-self: flex-start;
+    font-size: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--light);
+    border: 1px solid rgba(242, 235, 222, 0.35);
+    letter-spacing: 0.22em;
+  }
+  .authority-download:hover {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: var(--light);
   }
 
   /* ============ FOUNDER PHILOSOPHY ============ */
@@ -2501,6 +2697,31 @@
     filter: brightness(0) saturate(100%) invert(91%) sepia(11%) saturate(615%) hue-rotate(351deg) brightness(95%) contrast(91%) opacity(0.85);
   }
 
+  /* ============ INTERNATIONAL BROKERAGE NOTE ============ */
+  .intl-note {
+    background: var(--paper);
+    border-top: 0.5px solid rgba(26, 31, 34, 0.12);
+    border-bottom: 0.5px solid rgba(26, 31, 34, 0.12);
+    padding: 1.25rem 4rem;
+    text-align: center;
+  }
+  .intl-note p {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--soft-black);
+    opacity: 0.6;
+    margin: 0;
+    max-width: 760px;
+    margin: 0 auto;
+    letter-spacing: 0.01em;
+  }
+  .intl-note p strong {
+    font-weight: 500;
+    color: var(--soft-black);
+    opacity: 1;
+  }
+
   /* ============ FOOTER ============ */
   footer {
     background: var(--sand);
@@ -2532,6 +2753,26 @@
     margin-top: 1rem;
     line-height: 1.4;
     max-width: 360px;
+  }
+  .footer-intl {
+    font-family: var(--serif) !important;
+    font-style: italic;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    opacity: 0.45 !important;
+    margin-top: 1.5rem !important;
+    max-width: 320px !important;
+    border-top: 0.5px solid rgba(242, 236, 221, 0.15);
+    padding-top: 1.25rem;
+    color: var(--linen);
+  }
+  .footer-exp-logo {
+    display: block;
+    height: 70px;
+    width: auto;
+    margin-top: 1.5rem;
+    opacity: 1;
+    filter: none;
   }
   .footer-nav {
     display: grid;
@@ -2604,10 +2845,8 @@
     .hero-portrait-frame { max-width: 480px; }
     .anchor-strip { padding: 4rem 1.5rem; }
     .anchor-glass { padding: 2.5rem 1.5rem 3rem; }
-    .anchor-stats { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; margin-bottom: 2rem; padding-bottom: 2rem; }
-    .anchor-stat { padding: 0 0.5rem; }
-    .anchor-stat + .anchor-stat::before { display: none; }
-    .anchor-stat-num { font-size: 44px; }
+    .anchor-creds { grid-template-columns: 1fr; }
+    .anchor-creds li { padding: 0.65rem 0 0.65rem 1rem; }
     .anchor-stat-num.text-stat { font-size: 24px; padding-top: 14px; }
     .partner-grid { gap: 4rem; }
     .partner-row, .partner-row.reverse {
@@ -2646,6 +2885,8 @@
       grid-template-columns: 1fr;
       gap: 3rem;
     }
+    .testimonials { padding: 5rem 1.5rem; }
+    .testimonial-body { font-size: 18px; }
     .philosophy-img {
       grid-column: 1;
       grid-row: 1;
@@ -2731,16 +2972,24 @@
       display: block;
     }
     .advantage-grid {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      min-height: auto;
     }
     .advantage-item {
-      padding: 2.5rem 1.5rem;
+      flex: none;
+      min-height: 180px;
+      border-right: none;
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.10);
+      padding: 2rem 1.5rem;
     }
-    .advantage-item + .advantage-item {
-      border-left: none;
-      border-top: 0.5px solid rgba(255, 255, 255, 0.18);
+    .advantage-item p {
+      max-height: none;
+      opacity: 1;
+      transform: none;
+      margin-top: 0.75rem;
     }
-    .advantage-num { font-size: 56px; }
+    .advantage-item h3 { margin-bottom: 0.75rem; }
+    .advantage-num { font-size: 12px; }
     .advantage-item h3 { font-size: 12px; }
     .advantage-item p { font-size: 14px; }
     .authority-layout { grid-template-columns: 1fr; gap: 3rem; }
@@ -2790,12 +3039,15 @@
       </div>
       <h1 class="display reveal-words">The Insider <em>Power&nbsp;Couple</em> of&nbsp;Palm&nbsp;Beach&nbsp;County</h1>
       <p class="hero-tagline reveal-words">Two instincts. One outcome. Yours.</p>
-      <p class="reveal-words reveal-words--fade-only" style="font-size: 16px; line-height: 1.7; color: #FFFFFF; opacity: 1; max-width: 540px; margin-bottom: 2.5rem;">
+      <p class="reveal-words reveal-words--fade-only" style="font-size: 18px; line-height: 1.7; color: #FFFFFF; opacity: 1; max-width: 540px; margin-bottom: 2.5rem; text-shadow: 0 1px 12px rgba(0,0,0,0.40);">
         She closes. He connects. Together, they deliver for clients whose moves are too important for one person's bandwidth, one person's skills, or one person's network.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Start a Private Advisory Conversation</a>
         <a href="#partnership" class="btn btn-ghost">Meet the Rinaldis</a>
+      </div>
+      <div class="hero-logo-badge fade-in">
+        <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1779731885/image_1_imwucp.png" alt="eXp Realty" />
       </div>
     </div>
   </div>
@@ -2811,29 +3063,19 @@
         <p class="label eyebrow">The Positioning Anchor</p>
         <h3 class="reveal-words">The only power-couple advisory in Palm Beach County combining negotiation intelligence, condo authority, and insider access to&nbsp;the market's most important&nbsp;developments.</h3>
       </div>
-      <!-- Stats below — the proof points -->
-      <div class="anchor-stats">
-        <div class="anchor-stat">
-          <span class="anchor-stat-num">10+</span>
-          <span class="anchor-stat-text">Years embedded in Palm Beach County</span>
-        </div>
-        <div class="anchor-stat">
-          <span class="anchor-stat-num text-stat">Only</span>
-          <span class="anchor-stat-text">Certified Condo Specialist® in Palm Beach County</span>
-        </div>
-        <div class="anchor-stat">
-          <span class="anchor-stat-num">3×</span>
-          <span class="anchor-stat-text">eXp ICON Agent — Michelle</span>
-        </div>
-        <div class="anchor-stat">
-          <span class="anchor-stat-num">86+</span>
-          <span class="anchor-stat-text">Five-star reviews across platforms</span>
-        </div>
-        <div class="anchor-stat">
-          <span class="anchor-stat-num">10</span>
-          <span class="anchor-stat-text">Sold in 10 days while comparable units sat for 250+</span>
-        </div>
-      </div>
+      <!-- Credentials list — two columns -->
+      <ul class="anchor-creds">
+        <li>15+ Years Embedded in Palm Beach County</li>
+        <li>$100M+ in Sales Since 2012</li>
+        <li>National Certified Condominium Specialist® (CCS®) Serving Palm Beach County</li>
+        <li>7× eXp ICON Agent — Michelle</li>
+        <li>100+ Five-Star Reviews Across Zillow, Google, and RateMyAgent</li>
+        <li>Agent of the Year — Riviera Beach (RateMyAgent, 2024 &amp; 2026)</li>
+        <li>Voted Top Real Estate Agent in Florida (2026)</li>
+        <li>eXp ICON Agent of the Year (2020)</li>
+        <li>Best of 2025 Award Winner — Singer Island (Real Estate Agency category)</li>
+        <li>Referred by Clients Who Trust Them With the People They Care About Most</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -2860,17 +3102,18 @@
             <h3 class="reveal-words">Michelle&nbsp;Rinaldi</h3>
           </div>
           <div class="partner-subtitle">
-            <p class="reveal-words reveal-words--fade-only">She brings precision, a relentless negotiating instinct, an encyclopedic command of the market, and a track record of closing deals that other agents walk away from.</p>
+            <p class="reveal-words reveal-words--fade-only">She brings precision, a relentless negotiating instinct, an encyclopedic command of the market, and a track record of closing deals.</p>
           </div>
           <div class="partner-body">
             <p class="reveal-words reveal-words--fade-only">Michelle's negotiation approach integrates two simultaneous streams of intelligence — the analytical data of the transaction and the human data of everyone in it. By synthesizing market knowledge with a finely developed ability to read people, identify real decision-makers, and sense what is driving behavior beneath the surface, she arrives at outcomes that pure analysis cannot produce.</p>
             <p class="credentials-title">Michelle's Credentials</p>
             <ul class="credentials">
-              <li>The only Certified Condo Specialist® in Palm Beach County</li>
-              <li>Three-time eXp Realty ICON Agent</li>
-              <li>Author, <em>The Truth About Real Estate</em> — with a dedicated condo advisory section</li>
-              <li>Three years educating agents in condo specialization across the eXp global platform</li>
-              <li>Direct HOA governance experience — Florida Statute §718</li>
+              <li>National Certified Condominium Specialist® (CCS®) Serving Palm Beach County</li>
+              <li>7× eXp Realty ICON Agent</li>
+              <li>Author of <em>The Truth About Real Estate</em>, foreword by Hoss Pratt, endorsement by Tony Jeary, with a dedicated "10 Keys to Sell Your Condo" bonus section</li>
+              <li>Educator in Condo Specialization across the eXp Global Platform</li>
+              <li>Direct HOA Governance Experience and Florida Statute §718 Expertise</li>
+              <li>Voted Top Real Estate Agent in Florida (2026), Best of 2025 — Singer Island, and eXp ICON Agent of the Year (2020)</li>
             </ul>
           </div>
         </div>
@@ -2909,7 +3152,7 @@
 <section class="pull-quote">
   <div class="pull-quote-inner fade-in">
     <span class="pull-quote-mark">"</span>
-    <blockquote class="reveal-words">The Rinaldis are not selling Palm&nbsp;Beach. They are <em>sharing</em>&nbsp;it.</blockquote>
+    <blockquote class="reveal-words">The Rinaldis offer clients a deeply connected experience of <em>Palm&nbsp;Beach living.</em></blockquote>
     <cite class="reveal-words">— The Brand Foundation</cite>
   </div>
 </section>
@@ -2918,15 +3161,15 @@
 <section class="challenge">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="eyebrow">What We Challenge</span>
-      <h2 class="reveal-words">The luxury real estate industry runs&nbsp;on <em>a broken&nbsp;promise.</em></h2>
+      <span class="eyebrow">The Rinaldi Standard</span>
+      <h2 class="reveal-words">Three principles that govern <em>every move we make.</em></h2>
     </div>
     <p class="challenge-intro fade-in reveal-words reveal-words--fade-only">
-      That a single agent with a good personality and a nice camera can serve a $10M+ client at the level they deserve. It cannot. The most important moves of people's lives deserve more than one person's bandwidth, one person's skills, and one person's network.
+      The most important moves of people's lives deserve more than one person's bandwidth, one person's skills, or one person's network. The Rinaldi Group was built on three convictions that shape how we work.
     </p>
 
     <div class="challenge-layout">
-      <!-- Left column: image with conclusion overlay -->
+      <!-- Left column: image with closing statement overlay -->
       <div class="challenge-img fade-in">
         <div class="challenge-img-caption">
           <span class="challenge-img-caption-mark">"</span>
@@ -2934,41 +3177,41 @@
         </div>
       </div>
 
-      <!-- Right column: accordion of three myths -->
+      <!-- Right column: three principles as accordion -->
       <div class="myth-list fade-in stagger-2">
         <div class="myth open" data-myth="1">
           <div class="myth-header">
             <span class="myth-num">01</span>
-            <h3 class="myth-headline"><span class="myth-tag">FALSE</span>"A great agent is a great salesperson."</h3>
+            <h3 class="myth-headline">A great advisor is a great listener.</h3>
             <span class="myth-toggle"></span>
           </div>
           <div class="myth-body">
             <div class="myth-body-inner">
-              <p>A great advisor is a great listener — one who puts the client's long-term interests ahead of any single commission. Selling is what happens when listening has been done well.</p>
+              <p>Selling is what happens after listening has been done well. We put each client's long-term interest ahead of any single commission — because the relationships we build are decade-long, not deal-long.</p>
             </div>
           </div>
         </div>
         <div class="myth" data-myth="2">
           <div class="myth-header">
             <span class="myth-num">02</span>
-            <h3 class="myth-headline"><span class="myth-tag">FALSE</span>"Market knowledge means knowing the listings."</h3>
+            <h3 class="myth-headline">Market knowledge means knowing what's coming, not just what's listed.</h3>
             <span class="myth-toggle"></span>
           </div>
           <div class="myth-body">
             <div class="myth-body-inner">
-              <p>Real insider access means knowing what is coming before it is listed, being embedded with developers before buildings open, and understanding which neighborhoods are inflecting upward before the data catches up.</p>
+              <p>Real insider access means being embedded with developers before buildings open and understanding which neighborhoods are inflecting upward before the data catches up. Anyone can read a listing sheet. Few can read the market.</p>
             </div>
           </div>
         </div>
         <div class="myth" data-myth="3">
           <div class="myth-header">
             <span class="myth-num">03</span>
-            <h3 class="myth-headline"><span class="myth-tag">FALSE</span>"One agent is enough."</h3>
+            <h3 class="myth-headline">A partnership beats a single point of failure.</h3>
             <span class="myth-toggle"></span>
           </div>
           <div class="myth-body">
             <div class="myth-body-inner">
-              <p>In a market moving as fast as West Palm Beach, clients deserve a partnership where one principal is always available, always engaged, and always accountable. When one pushes, the other steadies. The client always wins.</p>
+              <p>In a market moving as fast as Palm Beach County, clients deserve a structure where one principal is always available, always engaged, and always accountable. When one pushes, the other steadies. The client always wins.</p>
             </div>
           </div>
         </div>
@@ -2977,62 +3220,60 @@
   </div>
 </section>
 
-<!-- ============ THE UNFAIR ADVANTAGE ============ -->
+<!-- ============ THE RINALDI DIFFERENCE ============ -->
 <section class="advantage" id="advantage">
   <div class="advantage-stage">
-    <!-- Background video — looping, muted, autoplay -->
     <video class="advantage-stage-video" autoplay loop muted playsinline preload="auto">
       <source src="https://res.cloudinary.com/dcuswyfur/video/upload/v1777670141/veo-3.1-fast-generate-001_slowly_zoom_in_but_not_too_close_and_make_the_trees_leaves_are_waving_make_it_ci-0_1_txpwak.mp4" type="video/mp4">
     </video>
-    <!-- Header inside the image -->
     <div class="advantage-stage-header">
-      <span class="eyebrow">The Unfair Advantage</span>
+      <span class="eyebrow">The Rinaldi Difference</span>
       <h2>What competitors <em>cannot credibly&nbsp;replicate.</em></h2>
-      <p>A list of differentiators is easy to write. Each of these is documented, verifiable, and — taken together — describes a position no other team in Palm Beach County currently holds.</p>
+      <p>The Palm Beach luxury market rewards experience, discretion, trusted relationships, and deep local expertise. The distinctions below reflect years of proven results, specialized condominium knowledge, and a reputation built through consistent client trust.</p>
     </div>
 
-    <!-- Cards at the bottom -->
+    <!-- Horizontal expanding panels — inside the stage over the video -->
     <div class="advantage-grid">
       <div class="advantage-item">
         <span class="advantage-num">01</span>
         <div class="advantage-content">
           <h3>Integrated Negotiation Intelligence</h3>
-          <p>Michelle reads two streams of data simultaneously: the analytical (pricing, comps, terms, timelines) and the human (real decision-makers, motivations, what is not being said). It is a skill built across a decade of luxury condo and waterfront single-family transactions. It is not a credential. It cannot be learned from a textbook. And no competitor can credibly claim it.</p>
+          <p>Michelle approaches negotiations through both analytical precision and human insight — understanding pricing, timing, motivations, and the dynamics behind complex decisions. It is a perspective shaped through years of luxury condominium and waterfront transactions across Palm Beach County.</p>
         </div>
       </div>
       <div class="advantage-item">
         <span class="advantage-num">02</span>
         <div class="advantage-content">
-          <h3>The Only Certified Condo Specialist® in Palm Beach County</h3>
-          <p>A formal credential with no equal in the market. In a county where luxury condo development is the defining asset class of the decade — Berkeley, Mr. C, South Flagler House, Olara, Shorecrest — this is not a minor distinction. It is category authority.</p>
+          <h3>National Certified Condominium Specialist® (CCS®) Serving Palm Beach County</h3>
+          <p>A specialized credential supported by years of hands-on condominium advisory experience within one of the country's fastest-evolving luxury condo markets.</p>
         </div>
       </div>
       <div class="advantage-item">
         <span class="advantage-num">03</span>
         <div class="advantage-content">
-          <h3>A Published Book</h3>
-          <p><em>The Truth About Real Estate</em> — written by Michelle, with a dedicated section on condominium advisory. One of the only resources of its kind produced by a Palm Beach County specialist. It is verifiable, public, and nearly impossible for a competitor to replicate quickly.</p>
+          <h3>A Published Real Estate Resource</h3>
+          <p><em>The Truth About Real Estate</em> (2020), written by Michelle, opens with a dedicated "10 Keys to Sell Your Condo" bonus section. With a foreword by Hoss Pratt and endorsement by Tony Jeary, it remains one of the only published resources of its kind produced by a Palm Beach County condominium specialist.</p>
         </div>
       </div>
       <div class="advantage-item">
         <span class="advantage-num">04</span>
         <div class="advantage-content">
-          <h3>Developer Insider Access</h3>
-          <p>Active relationships at The Berkeley, Mr. C Residences, South Flagler House, Olara, and Shorecrest — the projects that define the new West Palm Beach luxury landscape. The Rinaldis are not observers of this market. They are participants in it.</p>
+          <h3>Developer Relationships &amp; Market Access</h3>
+          <p>The Rinaldis maintain active developer relationships within Palm Beach County's evolving luxury condominium market, giving clients access to emerging waterfront and high-end residential developments shaping the future of the region. These include an active relationship with Mark Weldon, Founder, CEO and President of WICP Commercial Properties, on The Driftwood on Singer Island, and with Johnston Group Development and Construction on HAVN Residences &amp; Yacht Club in Palm Beach Shores.</p>
         </div>
       </div>
       <div class="advantage-item">
         <span class="advantage-num">05</span>
         <div class="advantage-content">
           <h3>Condo Governance Expertise</h3>
-          <p>Direct knowledge of HOA governance, Florida Statute §718, and the realities of condo association membership. The Rinaldis advise buyers not just on the property they are purchasing but on the association they are joining. A dimension most agents are not equipped to address.</p>
+          <p>The Rinaldis provide clients with guidance that extends beyond the property itself — including HOA governance, Florida Statute §718, and the practical realities of condominium ownership and association membership.</p>
         </div>
       </div>
       <div class="advantage-item">
         <span class="advantage-num">06</span>
         <div class="advantage-content">
-          <h3>A Referral-Built Reputation</h3>
-          <p>The majority of the Rinaldis' business comes from past clients who trusted them enough to send the most important people in their lives. This is not a marketing metric. It is a character reference at scale — one that any prospective client can verify by asking the right people.</p>
+          <h3>A Reputation Built Through Referrals</h3>
+          <p>Much of the Rinaldis' business comes through past clients, professional relationships, and personal referrals — an ongoing reflection of the trust they have built throughout the Palm Beach community.</p>
         </div>
       </div>
     </div>
@@ -3055,94 +3296,54 @@
     </div>
 
     <div class="developments-header fade-in">
-      <h3 class="reveal-words">Active Developer Relationships</h3>
-      <p class="reveal-words reveal-words--fade-only">Defining projects of the new West Palm Beach luxury landscape</p>
+      <h3 class="reveal-words">Active Listings</h3>
+      <p class="reveal-words reveal-words--fade-only">Current properties represented by the Rinaldi Group</p>
     </div>
 
     <div class="developments-carousel fade-in" id="dev-carousel">
       <div class="developments" id="dev-cards">
         <div class="development active" data-index="0">
-          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661399/1_ou8lvb.png');"></div>
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779799699/24532aaa-6644-f111-ac12-06ffa8295271_LE_upscale_prime_w6e9jm.jpg');"></div>
           <div class="dev-card-overlay">
-            <h3 class="dev-name">The Berkeley</h3>
+            <h3 class="dev-name">5140/2773 South Ocean Boulevard</h3>
             <div class="dev-meta-row">
-              <span class="dev-detail">26-Story Waterfront</span>
-              <span class="dev-price">$1.8M – $7.5M</span>
+              <span class="dev-detail">Palm Beach, FL 33480 &nbsp;·&nbsp; 2 Bed &nbsp;·&nbsp; 2 Bath &nbsp;·&nbsp; 1 Garage &nbsp;·&nbsp; 1,457 sq ft</span>
+              <span class="dev-price">$1,200,000</span>
             </div>
             <div class="dev-dots">
               <button class="dev-dot active" data-target="0" aria-label="View card 1"></button>
               <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
               <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
-              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
-              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
             </div>
           </div>
         </div>
         <div class="development" data-index="1">
-          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661706/mmmc_msi2us.webp');"></div>
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779799700/144df19f-f340-f111-ac12-06ffa8295271_LE_upscale_prime_fkr5ua.jpg');"></div>
           <div class="dev-card-overlay">
-            <h3 class="dev-name">Mr. C Residences</h3>
+            <h3 class="dev-name">2103/180 Lake Drive</h3>
             <div class="dev-meta-row">
-              <span class="dev-detail">Ultra-Luxury Tower</span>
-              <span class="dev-price">$5M+</span>
+              <span class="dev-detail">Palm Beach Shores, FL 33404 &nbsp;·&nbsp; 3 Bed &nbsp;·&nbsp; 4 Bath &nbsp;·&nbsp; 2 Garage &nbsp;·&nbsp; 2,826 sq ft</span>
+              <span class="dev-price">$2,500,000</span>
             </div>
             <div class="dev-dots">
               <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
               <button class="dev-dot active" data-target="1" aria-label="View card 2"></button>
               <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
-              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
-              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
             </div>
           </div>
         </div>
         <div class="development" data-index="2">
-          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661843/kk_u4m9yu.jpg');"></div>
+          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779799700/f665edbd-b03f-f111-ac12-06ffa8295271_LE_upscale_prime_zad44f.jpg');"></div>
           <div class="dev-card-overlay">
-            <h3 class="dev-name">South Flagler House</h3>
+            <h3 class="dev-name">5/3972 N Ocean Drive</h3>
             <div class="dev-meta-row">
-              <span class="dev-detail">Premier Address</span>
-              <span class="dev-price">$10M+</span>
+              <span class="dev-detail">Riviera Beach, FL &nbsp;·&nbsp; 3 Bed &nbsp;·&nbsp; 4 Bath &nbsp;·&nbsp; 1 Garage &nbsp;·&nbsp; 3,815 sq ft</span>
+              <span class="dev-price">$1,450,000</span>
             </div>
             <div class="dev-dots">
               <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
               <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
               <button class="dev-dot active" data-target="2" aria-label="View card 3"></button>
-              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
-              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
-            </div>
-          </div>
-        </div>
-        <div class="development" data-index="3">
-          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661426/oll_vgpzgj.jpg');"></div>
-          <div class="dev-card-overlay">
-            <h3 class="dev-name">Olara</h3>
-            <div class="dev-meta-row">
-              <span class="dev-detail">Waterfront Living</span>
-              <span class="dev-price">$2M – $15M</span>
-            </div>
-            <div class="dev-dots">
-              <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
-              <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
-              <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
-              <button class="dev-dot active" data-target="3" aria-label="View card 4"></button>
-              <button class="dev-dot" data-target="4" aria-label="View card 5"></button>
-            </div>
-          </div>
-        </div>
-        <div class="development" data-index="4">
-          <div class="dev-img" style="background-image: url('https://res.cloudinary.com/dcuswyfur/image/upload/v1777661577/kk_mfr33g.webp');"></div>
-          <div class="dev-card-overlay">
-            <h3 class="dev-name">Shorecrest</h3>
-            <div class="dev-meta-row">
-              <span class="dev-detail">Boutique Luxury</span>
-              <span class="dev-price">By Inquiry</span>
-            </div>
-            <div class="dev-dots">
-              <button class="dev-dot" data-target="0" aria-label="View card 1"></button>
-              <button class="dev-dot" data-target="1" aria-label="View card 2"></button>
-              <button class="dev-dot" data-target="2" aria-label="View card 3"></button>
-              <button class="dev-dot" data-target="3" aria-label="View card 4"></button>
-              <button class="dev-dot active" data-target="4" aria-label="View card 5"></button>
             </div>
           </div>
         </div>
@@ -3221,28 +3422,91 @@
         <div class="pillar-panel" data-index="2" role="tabpanel">
           <span class="pillar-panel-bignum">III</span>
           <h3>Relentless Execution</h3>
-          <p>Michelle does not drop deals. She reads market data and human behavior simultaneously — identifying the real decision-maker and sensing what drives each party — and delivers outcomes that pure analysis alone cannot produce.</p>
+          <p>Michelle approaches negotiations through both analytical precision and human insight — understanding pricing, timing, motivations, and the dynamics behind complex decisions. Her ability to combine strategic analysis with relationship intelligence helps clients move through high-stakes transactions with clarity and confidence.</p>
           <ul>
-            <li>Full-price offer in 10 days while nearby units sat 250+ days</li>
-            <li>Managed flawless 30-day close while client was at a silent retreat</li>
-            <li>Active across luxury condo and waterfront single-family transactions</li>
-            <li>86+ five-star reviews across multiple platforms</li>
+            <li>Sold a condo in 10 days at full price while comparable nearby units sat on the market for 250+ days</li>
+            <li>Managed a flawless 30-day close while the client was at a silent retreat and unreachable</li>
+            <li>Active across luxury condominium and waterfront single-family transactions</li>
+            <li>100+ verified five-star reviews across Zillow, Google, and RateMyAgent</li>
+            <li>RateMyAgent Agent of the Year — Riviera Beach (2024 &amp; 2026)</li>
+            <li>Voted Top Real Estate Agent in Florida</li>
           </ul>
         </div>
 
         <div class="pillar-panel" data-index="3" role="tabpanel">
           <span class="pillar-panel-bignum">IV</span>
           <h3>Community Roots</h3>
-          <p>The Rinaldis did not just move to Palm Beach County — they invested in it. Their commitment to this community goes far beyond commission.</p>
+          <p>The Rinaldis have built deep ties within Palm Beach County through long-term involvement, professional relationships, and ongoing community contribution. Their commitment to the region extends beyond real estate transactions and reflects a genuine investment in the people and future of the community they serve.</p>
           <ul>
-            <li>Licensed foster parents in the state of Florida — active with Place of Hope</li>
-            <li>In the early development phase of a philanthropic real estate initiative focused on transitional housing for young adults in Palm Beach County, in collaboration with Vita Nova</li>
-            <li>Three years educating agents globally in condo specialization through eXp Realty</li>
-            <li>Both Northeast-rooted — they understand where their clients come from</li>
+            <li>Licensed foster parents in the state of Florida, active with Place of Hope</li>
+            <li>In the early development phase of a philanthropic housing initiative for young adults in collaboration with Vita Nova</li>
+            <li>Condo specialization educator across the eXp Global platform</li>
+            <li>Deep understanding of the relocation journeys and lifestyle transitions clients experience when moving to Palm Beach County from California, the Northeast, the Midwest, Europe, and beyond</li>
           </ul>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header fade-in" style="text-align:center;max-width:100%;margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" style="display:flex;justify-content:center;">The Voices Behind the Work</span>
+      <h2 class="reveal-words" style="text-align:center;">Real estate is, in the end, <em>a relationship business.</em></h2>
+    </div>
+    <p class="testimonials-intro fade-in" style="text-align:center;margin-left:auto;margin-right:auto;">Here's what the people who've been through it with us say.</p>
+
+    <!-- Single-at-a-time carousel -->
+    <div class="testimonials-carousel fade-in" id="testimonials-carousel">
+
+      <div class="testimonial-card active">
+        <span class="testimonial-lead">Hands-down the most professional and honest realtor I have ever worked with.</span>
+        <p class="testimonial-body">While other units nearby sat on the market for over 250 days, Michelle secured a full-price offer for my property in just 10 days. She managed a flawless 30-day close and even rented my unit during the month of closing. Recently she sold me another Singer Island property and again handled the entire process meticulously — while I was at a silent retreat and completely unreachable, she negotiated the inspection flawlessly. Her meticulous nature and Paul's calm 'zen' support make them an unbeatable team. A high-stakes professional you can trust implicitly.</p>
+        <p class="testimonial-attribution">
+          <strong>Verified buyer &amp; seller, Singer Island</strong>
+          RateMyAgent, January 2026
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="testimonial-lead">Working with Michelle and The Rinaldi Group was the best decision I could've made when selling my condo on Singer Island.</span>
+        <p class="testimonial-body">From the first meeting, she knew exactly how to position my property in the luxury market. The photos, video, and marketing were on another level. She handled every detail with precision, negotiated like a pro, and had my condo under contract faster than I ever expected. It felt like having a strategist, designer, and therapist all in one.</p>
+        <p class="testimonial-attribution">
+          <strong>Verified seller, Singer Island</strong>
+          RateMyAgent, November 2025
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="testimonial-lead">Best buy and sell experience I have ever had in over 30 years of real estate transactions.</span>
+        <p class="testimonial-body">Michelle went out of her way to provide confidence and build a process to deliver a target outcome. She is a fighter, a skilled negotiator, and she communicates. There's no boloney — she is business savvy.</p>
+        <p class="testimonial-attribution">
+          <strong>Verified seller, Deerfield Beach</strong>
+          RateMyAgent, November 2025
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="testimonial-lead">Selling my condo on Singer Island while living in Canada could have been a stressful experience, but Michelle made the entire process smooth and worry-free.</span>
+        <p class="testimonial-body">Her communication was exceptional — always prompt, clear, and proactive — which gave me complete confidence despite being thousands of miles away. Michelle and Paul handled every detail with professionalism and genuine care.</p>
+        <p class="testimonial-attribution">
+          <strong>Verified seller, international</strong>
+          RateMyAgent, January 2026
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Dot navigation -->
+    <div class="testimonials-dots fade-in" id="testimonials-dots">
+      <button class="testimonials-dot active" data-index="0"></button>
+      <button class="testimonials-dot" data-index="1"></button>
+      <button class="testimonials-dot" data-index="2"></button>
+      <button class="testimonials-dot" data-index="3"></button>
+    </div>
+
   </div>
 </section>
 
@@ -3265,7 +3529,7 @@
 
       <!-- Right column: accordion -->
       <div class="authority-accordion fade-in stagger-2">
-        <div class="authority-card" data-card="1">
+        <div class="authority-card open" data-card="1">
           <div class="authority-card-header">
             <span class="authority-card-num">I</span>
             <h3 class="authority-card-title">The Published Book</h3>
@@ -3273,7 +3537,15 @@
           </div>
           <div class="authority-card-body">
             <div class="authority-card-body-inner">
-              <p><em>The Truth About Real Estate</em> includes a dedicated section on condominium advisory — one of the only resources of its kind produced by a Palm Beach County specialist. It is concrete, verifiable, and a hard credential most competitors cannot match.</p>
+              <div class="authority-book">
+                <div class="authority-book-cover">
+                  <span>Book Cover<br>Coming Soon</span>
+                </div>
+                <div class="authority-book-content">
+                  <p><em>The Truth About Real Estate</em> (Clovercroft Publishing, 2020) opens with a dedicated "10 Keys to Sell Your Condo" bonus section — one of the only published resources of its kind produced by a Palm Beach County condominium specialist. The book carries a foreword by Hoss Pratt, bestselling author of <em>Listing Boss</em>, and an endorsement from Tony Jeary, CEO coach and strategist.</p>
+                  <a class="btn btn-primary authority-download" href="#" onclick="alert('PDF download link coming soon — Michelle is sending the file.'); return false;">Download the Book</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3285,7 +3557,7 @@
           </div>
           <div class="authority-card-body">
             <div class="authority-card-body-inner">
-              <p>Three years teaching condo specialization to agents across the eXp Realty global platform — and an ongoing peer advisory role: agents from across the country call Michelle for guidance on condo pricing, buyer education, and complex problem-solving.</p>
+              <p>Teaching condo specialization to agents across the eXp Realty global platform, with an ongoing peer advisory role. Agents from across the country call Michelle for guidance on condo pricing, buyer education, and complex problem-solving.</p>
             </div>
           </div>
         </div>
@@ -3297,7 +3569,7 @@
           </div>
           <div class="authority-card-body">
             <div class="authority-card-body-inner">
-              <p>Direct experience with HOA governance and Florida Statute §718 means the Rinaldis advise buyers not just on the property they are purchasing but on the association they are joining. A dimension most agents are simply not equipped to address.</p>
+              <p>Direct experience with HOA governance and Florida Statute §718 means the Rinaldis advise buyers not just on the property they are purchasing but on the association they are joining — a dimension most agents are simply not equipped to address.</p>
             </div>
           </div>
         </div>
@@ -3319,7 +3591,7 @@
         <p class="lede reveal-words reveal-words--fade-only">Michelle came from Suffern, New York. Paul came from Toronto. They both moved to South Florida and built something rare: a life that is deeply woven into the fabric of a place, not just a career built in it.</p>
         <p class="reveal-words reveal-words--fade-only">Michelle built her Singer Island business without a pre-existing sphere of influence — from scratch, organically. That is not just a relocation story. It is proof of concept for every client now considering the same move.</p>
         <p class="reveal-words reveal-words--fade-only">They made West Palm Beach their home, built their careers here, raised a family here, and chose to invest in this community as licensed foster parents working with Place of Hope. They are now in the early development phase of a philanthropic real estate initiative focused on transitional housing for young adults in Palm Beach County, in collaboration with Vita Nova — currently identifying where their skills and resources can be most meaningfully applied.</p>
-        <p class="closing reveal-words">That is the reason clients trust them with their largest assets and most important decisions. The Rinaldis are not selling Palm Beach. They are <strong>sharing</strong>&nbsp;it.</p>
+        <p class="closing reveal-words">The Rinaldis offer clients a deeply connected experience of Palm Beach living.</p>
       </div>
     </div>
   </div>
@@ -3389,6 +3661,8 @@
       <div class="footer-brand">
         <a href="#" class="logo"><span class="logo-mark"></span>Rinaldi Group</a>
         <p>The insider power couple of Palm Beach County. Two instincts. One outcome. Yours.</p>
+        <p class="footer-intl">Member of eXp Realty — a leading international real estate brokerage with a network spanning Europe, North America, and Mexico, supporting clients with real estate needs anywhere in the world.</p>
+        <img src="https://res.cloudinary.com/dcuswyfur/image/upload/v1779731885/image_1_imwucp.png" alt="eXp Realty" class="footer-exp-logo" />
       </div>
       <nav class="footer-nav">
         <a href="#partnership">The Couple</a>
@@ -3737,6 +4011,35 @@
   }
 
   initMythAccordion();
+
+  // ============ TESTIMONIALS CAROUSEL ============
+  function initTestimonialsCarousel() {
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.testimonials-dot');
+    if (!cards.length) return;
+    let current = 0;
+
+    function goTo(index) {
+      cards[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      cards[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
+    });
+
+    // Auto-advance every 6 seconds
+    let timer = setInterval(() => goTo((current + 1) % cards.length), 6000);
+    document.getElementById('testimonials-carousel')?.addEventListener('mouseenter', () => clearInterval(timer));
+    document.getElementById('testimonials-carousel')?.addEventListener('mouseleave', () => {
+      timer = setInterval(() => goTo((current + 1) % cards.length), 6000);
+    });
+  }
+
+  initTestimonialsCarousel();
 
   // ============ ADVANTAGE STAGE HEADER — smooth sequential reveal ============
   // Replaces the per-word reveal with a calmer eyebrow → headline → intro cascade.

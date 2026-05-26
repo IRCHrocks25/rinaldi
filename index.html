@@ -2232,7 +2232,7 @@
     opacity: 0;
   }
   .authority-card.open .authority-card-body {
-    max-height: 400px;
+    max-height: 1200px;
     opacity: 1;
   }
   .authority-card-body-inner {
@@ -2970,18 +2970,23 @@
       margin-right: 0;
       min-height: 0;
       display: block;
+      overflow: visible;
     }
     .advantage-grid {
       flex-direction: column;
+      height: auto;
       min-height: auto;
+      overflow: visible;
     }
     .advantage-item {
       flex: none;
-      min-height: 180px;
+      min-height: 0;
       border-right: none;
       border-bottom: 0.5px solid rgba(255, 255, 255, 0.10);
       padding: 2rem 1.5rem;
+      overflow: visible;
     }
+    .advantage-item:last-child { border-bottom: none; }
     .advantage-item p {
       max-height: none;
       opacity: 1;
@@ -3013,6 +3018,351 @@
     .myth-body-inner { padding: 0 0 1.5rem 3.25rem; }
     .glass-stat-num { font-size: 44px; min-width: 84px; }
   }
+
+  @media (max-width: 768px) {
+    #nav { padding: 1rem 0.9rem; }
+    #nav.scrolled { padding: 0.9rem 0.9rem; }
+    .logo { font-size: 17px; letter-spacing: 0.02em; }
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      margin-right: 8px;
+    }
+    .nav-cta {
+      padding: 8px 12px;
+      font-size: 9px !important;
+      letter-spacing: 0.12em;
+    }
+
+    section, footer { padding: 4rem 1rem; }
+    .pull-quote, .philosophy, .testimonials, .contact { padding: 4rem 1rem; }
+    .section-header { margin-bottom: 2.5rem; }
+    .section-header .eyebrow { margin-bottom: 1rem; }
+    .section-header .eyebrow::before,
+    .hero-eyebrow::before,
+    .authority-heading .eyebrow::before,
+    .market-card-overlay .eyebrow::before {
+      width: 24px;
+    }
+
+    .hero {
+      min-height: auto;
+      padding-bottom: 2rem;
+    }
+    .hero-bg {
+      background-image:
+        linear-gradient(180deg, rgba(26,31,34,0.68) 0%, rgba(26,31,34,0.30) 16%, rgba(26,31,34,0.18) 36%, rgba(26,31,34,0.30) 100%),
+        linear-gradient(90deg, rgba(26,31,34,0.92) 0%, rgba(26,31,34,0.82) 36%, rgba(26,31,34,0.46) 62%, rgba(26,31,34,0.16) 100%),
+        url('https://res.cloudinary.com/dcuswyfur/image/upload/v1779732646/zmagdaphoto-5274.remini-enhanced__2_1_ysqfig.png');
+      background-position: 67% center;
+    }
+    .hero-content {
+      padding: 5.6rem 1rem 1.75rem;
+      align-items: flex-start;
+    }
+    .hero-text {
+      max-width: min(88vw, 560px);
+      padding-top: 1.5rem;
+    }
+    .hero-eyebrow { margin-bottom: 1.15rem; }
+    .hero h1 {
+      font-size: clamp(24px, 8.6vw, 34px);
+      line-height: 1.04;
+      margin-bottom: 0.85rem;
+      max-width: 11ch;
+      letter-spacing: -0.01em;
+    }
+    .hero-tagline {
+      font-size: clamp(16px, 6vw, 22px);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .hero .reveal-words.reveal-words--fade-only {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 1.1rem !important;
+      max-width: 30ch !important;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.48) !important;
+    }
+    .hero-ctas {
+      gap: 0.55rem;
+      width: 100%;
+    }
+    .hero-ctas .btn {
+      width: 100%;
+      text-align: center;
+      padding: 12px 14px;
+      letter-spacing: 0.1em;
+      font-size: 9px;
+    }
+    .hero-logo-badge { margin-top: 1rem; }
+    .hero-logo-badge img { height: 34px; }
+    .scroll-indicator { display: none; }
+
+    .anchor-strip { padding: 3.5rem 1rem; }
+    .anchor-glass { padding: 2rem 1rem 2.25rem; }
+    .anchor-text h3 {
+      font-size: clamp(22px, 8vw, 30px);
+      line-height: 1.28;
+      text-wrap: pretty;
+      max-width: 26ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .anchor-creds li {
+      font-size: 13.5px;
+      line-height: 1.45;
+      padding: 0.7rem 0.5rem 0.7rem 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .market-card { gap: 1.8rem; margin-bottom: 3.25rem; }
+    .market-card-image {
+      min-height: 300px;
+      aspect-ratio: 4 / 5;
+    }
+    .market-card-overlay h2 { font-size: 27px; }
+    .market-card-overlay p,
+    .market-card-overlay p.italic {
+      font-size: 15px;
+      max-width: 100%;
+    }
+
+    .developments-header h3 { font-size: clamp(26px, 9vw, 34px); }
+    .developments-carousel {
+      min-height: 380px;
+      aspect-ratio: 4 / 5;
+    }
+    .dev-card-overlay {
+      max-width: 92%;
+      padding: 1rem 1rem 1.2rem;
+    }
+    .dev-name {
+      font-size: clamp(24px, 8vw, 30px);
+      margin-bottom: 0.75rem;
+    }
+    .dev-meta-row,
+    .dev-detail,
+    .dev-price,
+    .dev-meta-row::before {
+      font-size: 12px;
+    }
+    .dev-dot { width: 20px; }
+    .dev-card-overlay .dev-dot.active { width: 30px; }
+
+    .pillars .section-header p.lede {
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 34ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pillars-grid { margin-top: 2.25rem; }
+    .pillar-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: visible;
+      border-bottom: none;
+      border-left: none;
+      gap: 0;
+    }
+    .pillar-tab {
+      min-width: 0;
+      padding: 0.9rem 0.8rem;
+      border: 0.5px solid rgba(26, 31, 34, 0.12);
+      border-left: none;
+      border-top: none;
+      align-items: flex-start;
+    }
+    .pillar-tab:nth-child(odd) { border-left: 0.5px solid rgba(26, 31, 34, 0.12); }
+    .pillar-tab + .pillar-tab { border-left: none; }
+    .pillar-tab::before {
+      left: 0;
+      right: 0;
+      top: auto;
+      bottom: 0;
+      width: auto;
+      height: 2px;
+    }
+    .pillar-tab-num { font-size: 20px; }
+    .pillar-tab-title {
+      font-size: 14px;
+      line-height: 1.25;
+    }
+    .pillar-panels { min-height: 0; }
+    .pillar-panel {
+      position: static;
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      transform: none;
+      transition: opacity 0.3s ease;
+    }
+    .pillar-panel.active {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      overflow: visible;
+    }
+    .pillar-panel h3 { font-size: 24px; }
+    .pillar-panel p { font-size: 15px; }
+    .pillar-panel-tag { font-size: 16px; }
+
+    .advantage-stage-header {
+      padding: 4rem 1rem 2.5rem;
+      max-width: 100%;
+    }
+    .advantage-stage-header h2 {
+      font-size: clamp(26px, 8vw, 34px);
+      line-height: 1.1;
+    }
+    .advantage-stage-header p {
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 36ch;
+    }
+    .advantage-item { min-height: 150px; padding: 1.25rem 0.9rem; }
+    .advantage-item h3 {
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+      text-transform: none;
+      font-weight: 600;
+    }
+    .advantage-item p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(242, 236, 221, 0.93);
+    }
+
+    .authority-heading h2 { font-size: clamp(28px, 9vw, 36px); }
+    .authority-heading p.lede { font-size: 16px; }
+    .authority-card-header {
+      gap: 0.8rem;
+      padding: 1.15rem 0;
+      align-items: flex-start;
+    }
+    .authority-card-title { font-size: clamp(20px, 6.5vw, 24px); }
+    .authority-card-body-inner { padding-right: 0; }
+    .authority-card.open .authority-card-body { max-height: 1400px; }
+    .authority-card-body p {
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 100%;
+    }
+    .authority-book {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .authority-book-cover {
+      width: min(58vw, 180px);
+      justify-self: start;
+    }
+    .authority-download {
+      width: 100%;
+      text-align: center;
+      padding: 11px 12px;
+      letter-spacing: 0.14em;
+    }
+
+    .challenge-img {
+      max-width: none;
+      min-height: 260px;
+      aspect-ratio: 4 / 5;
+      background-position: center 25%;
+    }
+    .myth-header {
+      grid-template-columns: 32px 1fr 18px;
+      gap: 0.75rem;
+      padding: 1rem 0;
+    }
+    .myth-num { font-size: 26px; }
+    .myth-headline { font-size: 16px; }
+    .myth-body-inner {
+      padding: 0 0 1.25rem 2.5rem;
+      font-size: 14px;
+    }
+
+    .testimonials-intro { font-size: 16px; margin-bottom: 2.25rem; }
+    .testimonial-card::before { font-size: 62px; }
+    .testimonial-lead { font-size: clamp(22px, 7vw, 28px); }
+    .testimonial-body {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .testimonials-pending {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.5rem 1rem;
+    }
+
+    .contact-left h2 { font-size: clamp(30px, 9vw, 40px); }
+    .contact-left p.lede { font-size: 15px; }
+    .contact-image-strip {
+      min-height: 220px;
+      aspect-ratio: 4 / 3;
+    }
+    .contact-links a {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .footer-top { gap: 2rem; }
+    .footer-nav {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .glass-card {
+      padding: 2rem 1rem;
+      border-radius: 0;
+    }
+    .glass-card h3 { font-size: clamp(28px, 8vw, 34px); }
+    .glass-stat {
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .glass-stat-num {
+      font-size: clamp(36px, 10vw, 44px);
+      min-width: 72px;
+    }
+    .glass-stat-text {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .anchor-text h3 {
+      font-size: clamp(20px, 7.8vw, 26px);
+      max-width: 22ch;
+    }
+    .anchor-creds li {
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 0.65rem 0.25rem 0.65rem 0.65rem;
+    }
+    .pillar-tabs { grid-template-columns: 1fr; }
+    .pillar-tab {
+      border-left: 0.5px solid rgba(26, 31, 34, 0.12);
+      border-right: 0.5px solid rgba(26, 31, 34, 0.12);
+    }
+    .pillar-tab-title { font-size: 15px; }
+    .advantage-stage-header { padding: 3.25rem 0.9rem 2rem; }
+    .advantage-stage-header h2 { font-size: clamp(24px, 9vw, 30px); }
+    .advantage-stage-header p { font-size: 13.5px; }
+    .advantage-item h3 { font-size: 12px; }
+    .authority-card-body-inner { padding: 0 0 1.5rem 0.5rem; }
+    .authority-book-cover { width: min(62vw, 170px); }
+  }
 </style>
 </head>
 <body>
@@ -3037,7 +3387,7 @@
       <div class="hero-eyebrow">
         <span class="eyebrow">Rinaldi Group</span>
       </div>
-      <h1 class="display reveal-words">The Insider <em>Power&nbsp;Couple</em> of&nbsp;Palm&nbsp;Beach&nbsp;County</h1>
+      <h1 class="display reveal-words">The Insider <em>Power Couple</em> of Palm Beach County</h1>
       <p class="hero-tagline reveal-words">Two instincts. One outcome. Yours.</p>
       <p class="reveal-words reveal-words--fade-only" style="font-size: 18px; line-height: 1.7; color: #FFFFFF; opacity: 1; max-width: 540px; margin-bottom: 2.5rem; text-shadow: 0 1px 12px rgba(0,0,0,0.40);">
         She closes. He connects. Together, they deliver for clients whose moves are too important for one person's bandwidth, one person's skills, or one person's network.
@@ -3228,7 +3578,7 @@
     </video>
     <div class="advantage-stage-header">
       <span class="eyebrow">The Rinaldi Difference</span>
-      <h2>What competitors <em>cannot credibly&nbsp;replicate.</em></h2>
+      <h2>What competitors <em>cannot credibly replicate.</em></h2>
       <p>The Palm Beach luxury market rewards experience, discretion, trusted relationships, and deep local expertise. The distinctions below reflect years of proven results, specialized condominium knowledge, and a reputation built through consistent client trust.</p>
     </div>
 
@@ -3367,7 +3717,7 @@
   <div class="container">
     <div class="section-header fade-in">
       <span class="eyebrow">The Four Pillars</span>
-      <h2 class="reveal-words">How the&nbsp;Rinaldi&nbsp;Group <em>actually&nbsp;operates.</em></h2>
+      <h2 class="reveal-words">How the Rinaldi Group <em>actually operates.</em></h2>
       <p class="lede reveal-words">Four commitments that govern every client relationship — from first conversation to closing, and far beyond.</p>
     </div>
 
@@ -3523,7 +3873,7 @@
       <!-- Left column: heading (sticky) -->
       <div class="authority-heading fade-in">
         <span class="eyebrow">Beyond the Transaction</span>
-        <h2 class="reveal-words">A&nbsp;category&nbsp;authority — <em>not simply a&nbsp;category&nbsp;practitioner.</em></h2>
+        <h2 class="reveal-words">A category authority — <em>not simply a category practitioner.</em></h2>
         <p class="lede reveal-words">What sets Michelle apart is not just what she has sold. It is what she has taught, written, and continues to be asked about by other professionals.</p>
       </div>
 
